@@ -1,0 +1,11 @@
+﻿// ------------------------------------------ EV3 MODULE: MATRIX -----------------------------------------------
+DATA16 newArray2d
+DATA32 newSize2d
+
+inline MATRIX.INIT    // FFF
+{
+	MOVEF_32 :0 newSize2d
+	ARRAY CREATEF newSize newArray2d
+	ARRAY FILL newArray2d :1
+	MOVE16_F newArray2d :2
+}

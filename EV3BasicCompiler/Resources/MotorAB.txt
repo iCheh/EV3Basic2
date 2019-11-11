@@ -1,0 +1,46 @@
+﻿// ------------------------------------------ EV3 MODULE: MOTORAB ----------------------------------------------
+
+DATA8 setSpeedAB
+DATA8 setPowerAB
+
+inline MOTORAB.OFF // V
+{
+	OUTPUT_POWER 0 3 0
+	OUTPUT_STOP 0 3 0
+}
+
+inline MOTORAB.OFFANDBRAKE // V
+{
+	OUTPUT_POWER 0 3 0
+	OUTPUT_STOP 0 3 1
+}
+
+inline MOTORAB.SETSPEED    // FV
+{
+	MOVEF_8 :0 setSpeedAB
+	OUTPUT_SPEED 0 3 setSpeedAB
+
+inline MOTORAB.SETPOWER   // FV
+{
+	MOVEF_8 :0 setPowerAB
+	OUTPUT_POWER 0 3 setPowerAB
+}
+
+inline MOTORAB.STARTSPEED    // FV
+{
+	MOVEF_8 :0 setSpeedAB
+	OUTPUT_SPEED 0 3 setSpeedAB
+	OUTPUT_START 0 3
+}
+
+inline MOTORAB.STARTPOWER   // FV
+{
+	MOVEF_8 :0 setPowerAB
+	OUTPUT_POWER 0 3 setPowerAB
+	OUTPUT_START 0 3
+}
+
+inline MOTORAB.START   // V
+{
+	OUTPUT_START 0 3
+}

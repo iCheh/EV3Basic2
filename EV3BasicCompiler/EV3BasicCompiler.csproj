@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41E8F7A9-D228-4323-BD0D-F479EF81072C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EV3BasicCompiler</RootNamespace>
+    <AssemblyName>EV3BasicCompiler</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompileException.cs" />
+    <Compile Include="Compiler.cs" />
+    <Compile Include="FunctionDefinition.cs" />
+    <Compile Include="Expression.cs" />
+    <Compile Include="LibraryEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scanner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\runtimelibrary.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LCD.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Speaker.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Motor.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sensor.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EV3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Assert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Math.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Program.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thread.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EV3File.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NativeCode.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mailbox.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Byte.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Matrix.txt" />
+    <Content Include="Resources\BitMask.txt" />
+    <Content Include="Resources\MotorAB.txt" />
+    <Content Include="Resources\MotorAC.txt" />
+    <Content Include="Resources\MotorAD.txt" />
+    <Content Include="Resources\MotorB.txt" />
+    <Content Include="Resources\MotorBC.txt" />
+    <Content Include="Resources\MotorBD.txt" />
+    <Content Include="Resources\MotorC.txt" />
+    <Content Include="Resources\MotorCD.txt" />
+    <Content Include="Resources\MotorD.txt" />
+    <Content Include="Resources\Row.txt" />
+    <Content Include="Resources\Sens.txt" />
+    <Content Include="Resources\MotorA.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

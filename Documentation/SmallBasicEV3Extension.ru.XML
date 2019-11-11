@@ -1,0 +1,2127 @@
+﻿<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmallBasicEV3Extension</name>
+    </assembly>
+    <members>
+        <member name="T:SmallBasicEV3Extension.Assert">
+            <summary>
+			Функции отладки, помогающие проверить на правильность части кода.
+			Добавляя проверки утверждений, вы можете легко найти ошибки в программе. Например, когда часть программы зависит от переменной A, имеющей положительное значение, вы можете использовать Assert.Greater(A, 0, "A must be > 0!").
+			Когда программа проверяет утверждение, которое не выполняется, выведется указанное сообщение об ошибке.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Assert.Failed(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+			Вывести сообщение об ошибке на экран. Эта функция должна использоваться только в том случае, если ошибка уже произошла.
+            </summary>
+            <param name="message">Сообщение, которое будет выведено на экран</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Assert.Equal(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+			Проверяет, равны ли два значения. Проверяется полное совпадение, даже "True" и "tRue" различными выражениями.
+            </summary>
+            <param name="a">Первое значение</param>
+            <param name="b">Второе значение</param>
+            <param name="message">Сообщение, которое будет выведено, если проверка провалилась</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Assert.NotEqual(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверяет, неравны ли два значения. Проверяется полное совпадение, даже "True" и "tRue" различными выражениями.
+            </summary>
+            <param name="a">Первое значение</param>
+            <param name="b">Второе значение</param>
+            <param name="message">Сообщение, которое будет выведено, если проверка провалилась</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Assert.Less(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверяет, меньше ли первое число второго.
+            </summary>
+            <param name="a">Первое значение</param>
+            <param name="b">Второе значение</param>
+            <param name="message">Сообщение, которое будет выведено, если проверка провалилась</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Assert.Greater(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверяет, больше ли первое число второго.
+            </summary>
+            <param name="a">Первое значение</param>
+            <param name="b">Второе значение</param>
+            <param name="message">Сообщение, которое будет выведено, если проверка провалилась</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Assert.LessEqual(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверяет, меньше или равно ли первое число второму.
+            </summary>
+            <param name="a">Первое значение</param>
+            <param name="b">Второе значение</param>
+            <param name="message">Сообщение, которое будет выведено, если проверка провалилась</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Assert.GreaterEqual(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверяет, больше или равно ли первое число второму.
+            </summary>
+            <param name="a">Первое значение</param>
+            <param name="b">Второе значение</param>
+            <param name="message">Сообщение, которое будет выведено, если проверка провалилась</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Assert.Near(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверяет, почти равны два числа. Это может быть полезно при сравнении двух дробных чисел с большим количеством знаков после запятой. Их округление может вызвать немного различные результаты
+            </summary>
+            <param name="a">Первое значение</param>
+            <param name="b">Второе значение</param>
+            <param name="message">Сообщение, которое будет выведено, если проверка провалилась</param>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Buttons">
+            <summary>
+            Прочитать состояния и нажатия (включая щелчки) кнопок на блоке EV3.
+            Кнопки обозначаются с использованием следующих символов:
+             U   Вверх
+             E   Центр
+             D   Вниз
+             R   Вправо
+             L   Влево
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Buttons.GetClicks">
+            <summary>
+            Проверяет, какие кнопки были нажаты с момент последнего вызова GetClicks и возвращает текст, содержащий соответствующие им символы. 
+            Состояние кнопок при этом очищается. Также издает звук, когда зафиксировано нажатие кнопок.            
+            </summary>
+            <returns>Текст, содержащий символы нажатых кнопок (может быть пустым, если ничего не нажато)</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Buttons.Wait">
+            <summary>
+            Ждать, пока одна из кнопок на блоке будет нажата.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Buttons.Flush">
+            <summary>
+            Очистить состояние нажатых кнопок. Последующие вызовы GetClicks покажет только те кнопки, которые были нажаты после очистки.
+            </summary>
+        </member>
+        <member name="P:SmallBasicEV3Extension.Buttons.Current">
+            <summary>
+            Кнопки, которые в данный момент нажаты.
+            Содержит текст с символами, соответствующим всем кнопкам, нажатым в данный момент.
+            </summary>
+        </member>
+        <member name="T:SmallBasicEV3Extension.EV3File">
+            <summary>
+            Доступ к файловой системе блока EV3 для чтения или записи данных.
+            К именам файлов может быть добавлен абсолютный путь начиная с '/' для доступа к любому файлу в файловой системе или относительный, начиная с папки prjs.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.OpenWrite(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Открывает файл для перезаписи. Если файл не существует, он будет создан.
+            </summary>
+            <param name="filename">Имя файла для создания/перезаписи</param>
+            <returns>Номер, идентифицирующий данный открытый файл (file handle)</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.OpenAppend(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Открывает файл для добавления в него данных. Если файл не существует, он будет создан.
+            </summary>
+            <param name="filename">Имя файла для создания/добавления данных</param>
+            <returns>Номер, идентифицирующий данный открытый файл (file handle)</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.OpenRead(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Открывает файл для чтения. Если файл не существует, возвращает 0.
+            </summary>
+            <param name="filename">Имя файла для чтения</param>
+            <returns>Номер, идентифицирующий данный открытый файл (file handle) или 0, если файл не существует</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.Close(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Закрывает открытый файл.
+            </summary>
+            <param name="handle">Идентификатор файла (file handle), полученный в момент открытия файла</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.WriteLine(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Записывает текстовую строку в файл. Строка будет записана в кодировке ISO-8859-1 и оканчиваться символом перевода строки (код 10).
+            </summary>
+            <param name="handle">Идентификатор файла (file handle), полученный в момент открытия файла</param>
+            <param name="text">Текст для записи в файл</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.WriteByte(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Записывает один байт данных в файл.
+            </summary>
+            <param name="handle">Идентификатор файла (file handle), полученный в момент открытия файла</param>
+            <param name="data">Один байт для записи (значение от 0 до 255).</param>        
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.ReadLine(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Прочитать текстовую строку из файла. Строка будет прочитана в кодировке ISO-8859-1 и должна оканчиваться символом перевода строки (код 10).
+            </summary>
+            <param name="handle">Идентификатор файла (file handle), полученный в момент открытия файла</param>
+            <returns>Текстовая строка, прочитанная из текущей строки файла</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.ReadByte(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Прочитать один байт из файла.
+            </summary>
+            <param name="handle">Идентификатор файла (file handle), полученный в момент открытия файла</param>
+            <returns>Следующий по счету байт из файла</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.ReadNumberArray(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Читает массив чисел из бинарного файла. Числа будут раскодированы с использованием кодировки IEEE как тип Float с одинарной точностью
+            </summary>
+            <param name="handle">Идентификатор файла (file handle), полученный в момент открытия файла</param>
+            <param name="size">Размер массива, который будет прочитан</param>
+            <returns>Массив чисел указанного размера</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.ConvertToNumber(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Конвертация текста в число.
+            </summary>
+            <param name="text">Текст, содержащий число, может содержать также дробную часть числа</param>
+            <returns>Число</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3File.TableLookup(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Функция предназначена для чтения байт из потенциально огромных файлов, которые слишком велики, чтобы быть переданы в память в целом.
+            Поскольку файл может быть настолько большой, что численной адресации будет недостаточно, вводятся параметры строка/столбец
+            </summary>
+            <param name="filename">Имя файла</param>
+            <param name="bytes_per_row">Если файл имеет структуру строк/столбцов, в параметре указывается число байт в строке, иначе указывай 1</param>
+            <param name="row">Читаемая строка (начиная с 0)</param>
+            <param name="column">Читаемый столбец (начиная с 0)</param>
+            <returns>Байт из указанной позиции</returns>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Byte">
+            <summary>
+            Манипуляция отдельными битами 8-битовых чисел.
+            Эта библиотека позволяет обрабатывать числа SmallBasic, так как если бы они были организованы в виде 8-битных целочисленных значений («байты»). Для этого значения параметра всегда преобразуются в простые байты, затем выполняется запрошенная операция, а затем результат преобразуется обратно в SmallBasic-число.
+            Поддерживаются обычные битовые операции: AND, OR, NOT, XOR, разные сдвиги и операции преобразования данных. Обратите внимание, что идентификаторы AND и OR являются зарезервированными словами SmallBasic, поэтому эти операции называются AND_ и OR_. Для получения дополнительной информации см. https://ru.wikipedia.org/wiki/Битовые_операции .
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.NOT(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Побитовое отрицание. 
+            </summary>
+            <param name="value">Число для отрицания</param>
+            <returns>Число, получаемое, когда каждый бит входного байта индивидуально инвертируется</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.AND_(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Побитовое «И»
+            </summary>
+            <param name="a">Первый операнд</param>
+            <param name="b">Второй операнд</param>
+            <returns>Число, получаемое, когда между каждыми битами входных чисел выполняется логическое «И»</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.OR_(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Побитовое «ИЛИ» 
+            </summary>
+            <param name="a">Первый операнд</param>
+            <param name="b">Второй операнд</param>
+            <returns>Число, получаемое, когда между каждыми битами входных чисел выполняется логическое «ИЛИ»</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.XOR(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Побитовое исключающее «ИЛИ»
+            </summary>
+            <param name="a">Первый операнд</param>
+            <param name="b">Второй операнд</param>
+            <returns>Число, получаемое, когда между каждыми битами входных чисел выполняется исключающее «ИЛИ»</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.BIT(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Извлекает один бит из байта.
+            </summary>
+            <param name="value">Байтовое число, из которого извлекается бит</param>
+            <param name="index">Позиция бита внутри байта</param>
+            <returns>Бит в указанной позиции, который равен 0 или 1</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.SHL(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Побитовый сдвиг влево.
+            </summary>
+            <param name="value">Байт, чьи биты будут сдвинуты</param>
+            <param name="distance">На сколько позиций будут смещены биты</param>
+            <returns>Число, которое вы получаете после перемещения каждого бита входного значения в сторону более значимых позиций</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.SHR(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Побитовый сдвиг вправо.
+            </summary>
+            <param name="value">Байт, чьи биты будут сдвинуты</param>
+            <param name="distance">На сколько позиций будут смещены биты</param>
+            <returns>Число, которое вы получаете после перемещения каждого бита входного значения в сторону менее значимых позиций</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.ToHex(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Преобразование 8-битового байта в строку, содержащую двухзначное шестнадцатеричное число.
+            </summary>
+            <param name="value">Байт для преобразования в строку</param>
+            <returns>Строка, содержащая двухзначное шестнадцатеричное число</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.ToBinary(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Преобразование 8-битового байта в строку, содержащую восьмизначное двоичное число.
+            </summary>
+            <param name="value">Байт для преобразования в строку</param>
+            <returns>Строка, содержащая восьмизначное двоичное число</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.ToLogic(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+			Преобразует число (может быть 8-битным байтом или любым другим числом) в логическое значение "True" или "False".
+            Это значение затем можно использовать для условия в If или While или чего либо еще.
+            Обратите внимание, что любое входное значение больше 0 приводит к "True", а входное значение 0 или любое отрицательное значение приводит к "False".
+            Такое поведение позволяет создавать некоторые странные и замечательные вещи с помощью этой команды. Подробнее на https://goo.gl/KiZrqS
+            </summary>
+            <param name="value">Число, которое должно быть преобразовано в соответствующее логическое значение</param>
+            <returns>"True" или "False"</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.H(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Преобразование строки, содержащей шестнадцатеричное число в обычное число.
+            </summary>
+            <param name="value">Строка, содержащая байт в виде шестнадцатеричного числа (Например: "4F")</param>
+            <returns>Байт в виде числа</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.B(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Преобразование строки, содержащей двоичное число в обычное число.
+            </summary>
+            <param name="value">Строка, содержащая байт в виде двоичного числа (Например: "01001111")</param>
+            <returns>Байт в виде числа</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Byte.L(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Преобразование строки, содержащей логическое значение в числовые 0 или 1.
+            </summary>
+            <param name="value">Строка, содержащая логическое значение. Все различающиеся к регистру варианты "True" ("TRUE","TrUe", "truE", т.д.) считаются одинаковыми. Все остальные воспринимаются как "False".</param>
+            <returns>0 или 1</returns>
+        </member>        
+        <member name="T:SmallBasicEV3Extension.F">
+            <summary>
+            Объект для создания функций с параметрами и локальными переменными в Small Basic.
+            Позволяет программам вызывать пользовательские функции в форме, подобной той, которая возможна со встроенными командами, включая более удобные параметры передачи и возврата.
+            Функции могут быть созданы с помощью команды F.Function и могут быть позже вызваны с помощью одной из команд F.Call .
+            См. пример «Function.sb» для лучшего введения.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Function(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Создать именованную функцию и ее локальные переменные (параметры), а так же их значения по умолчанию. Перед выполнением этой команды свойство F.Start должно быть установлено в подпрограмму, которая затем станет отправной точкой для функции.
+            Локальные переменные также используются для передачи параметров при вызове: для любого вызова с n параметрами эти параметры станут начальными значениями первых n локальных переменных. У остальных локальных переменных останутся значения по умолчанию.
+            </summary>
+            <param name="name">Имя для функции (должно быть строковым литералом)</param>
+            <param name="parameterdefinitions">Строка, содержащая последовательность имен локальных переменных и их начальных значений. Например: "A B:5 T:hello". Если значение по умолчанию не указано, будет использовано 0.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Set(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Записать в локальную переменную указанное значение.
+            </summary>
+            <param name="variablename">Имя локальной переменной (без учета регистра)</param>
+            <param name="value">Значение, сохраняемое в локальную переменную</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.ReturnNumber(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Немедленное завершение текущего вызова функции и возвращение значения в качестве числа обратно команде вызова.
+            При компиляции на EV3, можно использовать только в изначальной процедуре функции.
+            </summary>
+            <param name="value">Возвращаемое значение (должно быть числом)</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.ReturnText(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Немедленное завершение текущего вызова функции и возвращение значения в качестве текста обратно команде вызова.
+            При компиляции на EV3, можно использовать только в изначальной процедуре функции.
+            </summary>
+            <param name="value">Возвращаемое значение (интерпретируется как текст)</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Return">
+            <summary>
+            Немедленное завершение вызова текущей функции.
+            При компиляции на EV3, можно использовать только в изначальной процедуре функции.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Get(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Получить значение локальной переменной.
+            </summary>
+            <param name="variablename">Имя локальной переменной (без учета регистра)</param>
+            <returns>Значение, которое содержит переменная</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call0(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции без параметров.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call1(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 1 параметром.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call2(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 2 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 3 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call4(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 4 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call5(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 5 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call6(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 6 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call7(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 7 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call8(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 8 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call9(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 9 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call10(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 10 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call11(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 11 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call12(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 12 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call13(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 13 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <param name="p13">Параметр 13</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call14(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 14 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <param name="p13">Параметр 13</param>
+            <param name="p14">Параметр 14</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call15(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 15 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <param name="p13">Параметр 13</param>
+            <param name="p14">Параметр 14</param>
+            <param name="p15">Параметр 15</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call16(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 16 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <param name="p13">Параметр 13</param>
+            <param name="p14">Параметр 14</param>
+            <param name="p15">Параметр 15</param>
+            <param name="p16">Параметр 16</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call17(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 17 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <param name="p13">Параметр 13</param>
+            <param name="p14">Параметр 14</param>
+            <param name="p15">Параметр 15</param>
+            <param name="p16">Параметр 16</param>
+            <param name="p17">Параметр 17</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call18(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 18 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <param name="p13">Параметр 13</param>
+            <param name="p14">Параметр 14</param>
+            <param name="p15">Параметр 15</param>
+            <param name="p16">Параметр 16</param>
+            <param name="p17">Параметр 17</param>
+            <param name="p18">Параметр 18</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call19(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 19 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <param name="p13">Параметр 13</param>
+            <param name="p14">Параметр 14</param>
+            <param name="p15">Параметр 15</param>
+            <param name="p16">Параметр 16</param>
+            <param name="p17">Параметр 17</param>
+            <param name="p18">Параметр 18</param>
+            <param name="p19">Параметр 19</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.F.Call20(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Исполнить вызов функции с 20 параметрами.
+            </summary>
+            <param name="name">Имя функции (без учета регистра)</param>
+            <param name="p1">Параметр 1</param>
+            <param name="p2">Параметр 2</param>
+            <param name="p3">Параметр 3</param>
+            <param name="p4">Параметр 4</param>
+            <param name="p5">Параметр 5</param>
+            <param name="p6">Параметр 6</param>
+            <param name="p7">Параметр 7</param>
+            <param name="p8">Параметр 8</param>
+            <param name="p9">Параметр 9</param>
+            <param name="p10">Параметр 10</param>
+            <param name="p11">Параметр 11</param>
+            <param name="p12">Параметр 12</param>
+            <param name="p13">Параметр 13</param>
+            <param name="p14">Параметр 14</param>
+            <param name="p15">Параметр 15</param>
+            <param name="p16">Параметр 16</param>
+            <param name="p17">Параметр 17</param>
+            <param name="p18">Параметр 18</param>
+            <param name="p19">Параметр 19</param>
+            <param name="p20">Параметр 20</param>
+            <returns>Значение, возвращаемое функцией</returns>
+        </member>
+        <member name="E:SmallBasicEV3Extension.F.Start">
+            <summary>
+            Это свойство должно быть установлено в подпрограмму перед выполнением последующей операции F.Function, которая настраивает функцию.
+            </summary>
+        </member>
+        <member name="T:SmallBasicEV3Extension.LCD">
+            <summary>
+            Управление ЖК-экраном на блоке EV3.
+            EV3 имеет черно-белый дисплей с разрешением 178x128 точек. Координаты отсчитываются от левого верхнего угла экрана, имеющего координаты (0;0)
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.StopUpdate">
+            <summary>
+            Начинать запоминать всю выводимую экран информацию без ее отображения. При следующем вызове Update() все накопленные изменения отобразятся.
+            Вы можете использовать эту функцию, чтобы предотвратить мерцание или для ускорения рисования сложных изображений в ЖК-дисплее.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.Update">
+            <summary>
+            Вывести на экран все изменения, которые произошли с момента последнего вызова StopUpdate().
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.Clear">
+            <summary>
+            Очистка экрана. Все пиксели закрашиваются в белый цвет.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.Pixel(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Вывод на экран одиночного пикселя указанного цвета.
+            </summary>
+            <param name="color">0 (белый) или 1 (черный)</param>
+            <param name="x">Координата X по горизонтали</param>
+            <param name="y">Координата Y по вертикали</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.Line(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Вывод на экран линии указанного цвета.
+            </summary>
+            <param name="color">0 (белый) или 1 (черный)</param>
+            <param name="x1">Координата X начальной точки</param>
+            <param name="y1">Координата Y начальной точки</param>
+            <param name="x2">Координата X конечной точки</param>
+            <param name="y2">Координата Y конечной точки</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.Circle(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Рисует не закрашенный круг указанного размера.
+            </summary>
+            <param name="color">0 (белый) или 1 (черный)</param>
+            <param name="x">Координата X центра круга</param>
+            <param name="y">Координата Y центра круга</param>
+            <param name="radius">Радиус круга</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.Text(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Напечатать заданный текст или числа на экране.
+            </summary>
+            <param name="color">0 (белый) или 1 (черный)</param>
+            <param name="x">Координата X начала печати</param>
+            <param name="y">Координата Y начала печати</param>
+            <param name="font">Размер шрифта: 0 (маленький), 1 (полужирный), 2 (большой)</param>
+            <param name="text">Текст или число для вывода на дисплей</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.Write(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Напечатать заданный текст черным цветом на экране.
+            Если нужно выводить текст с выбором цвета и размера, используй LCD.Text
+            </summary>
+            <param name="x">Координата X начала печати</param>
+            <param name="y">Координата Y начала печати</param>
+            <param name="text">Текст или числа для вывода на дисплей</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.FillRect(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Рисует закрашенный заданным цветом прямоугольник.
+            </summary>
+            <param name="color">0 (белый) или 1 (черный)</param>
+            <param name="x">Координата X левой стороны прямоугольника</param>
+            <param name="y">Координата Y верхней стороны прямоугольника</param>
+            <param name="width">Ширина прямоугольника</param>
+            <param name="height">Высота прямоугольника</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.Rect(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Рисует не закрашенный прямоугольник с границей заданного цвета.
+            </summary>
+            <param name="color">0 (белый) или 1 (черный)</param>
+            <param name="x">Координата X левой стороны прямоугольника</param>
+            <param name="y">Координата Y верхней стороны прямоугольника</param>
+            <param name="width">Ширина прямоугольника</param>
+            <param name="height">Высота прямоугольника</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.InverseRect(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Инвертирует все пиксели в границах прямоугольника.
+            </summary>
+            <param name="x">Координата X левой стороны прямоугольника</param>
+            <param name="y">Координата Y верхней стороны прямоугольника</param>
+            <param name="width">Ширина прямоугольника</param>
+            <param name="height">Высота прямоугольника</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.FillCircle(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Рисует закрашенный круг указанного размера.
+            </summary>
+            <param name="color">0 (белый) или 1 (черный)</param>
+            <param name="x">Координата X центра круга</param>
+            <param name="y">Координата Y центра круга</param>
+            <param name="radius">Радиус круга</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.LCD.BmpFile(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Вывести файл заданным цветом на экран. Поддерживаются только файлы в формате .rgf 
+            </summary>
+            <param name="color">0 (белый) или 1 (черный)</param>
+            <param name="x">Координата X левой стороны изображения</param>
+            <param name="y">Координата Y верхней стороны изображения</param>
+            <param name="filename">Имя файла без расширения .rgf. Может содержать относительный путь от папки 'prjs' или абсолютный, начинаясь с '/').</param>
+        </member>
+        <member name="T:SmallBasicEV3Extension.EV3">
+            <summary>
+            Полезные функции блока EV3.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3.SetLEDColor(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Установить цвет подсветки кнопок блока EV3 и ее эффекты.
+            Подсветка: OFF - выключена, GREEN - зеленая, RED - красная, ORANGE - оранжевая. Эффекты: NORMAL - гореть постоянно, FLASH - вспыхивать, PULSE - пульсировать. 
+            </summary>
+            <param name="color">Может быть "OFF", "GREEN", "RED", "ORANGE"</param>
+            <param name="effect">Может быть "NORMAL", "FLASH", "PULSE"</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3.SystemCall(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запустить одну системную команду в операционной системе EV3 Linux. Выполняемая программа будет ждать, пока запущенная в операционной системе программа не завершит работу.
+            </summary>
+            <param name="commandline">Системная команда.</param>
+            <returns>Статус завершения запущенной команды</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.EV3.QueueNextCommand">
+            <summary>
+            Повышение производительности при работе в режиме «ПК». Не посылать следующую команду на блок сразу же, а подождать, поставив ее в очередь. В режиме запуска программы на блоке не имеет смысла.
+            </summary>
+        </member>
+        <member name="P:SmallBasicEV3Extension.EV3.Time">
+            <summary>
+            Время в миллисекундах, прошедшее с момента запуска программы.
+            </summary>
+        </member>
+        <member name="P:SmallBasicEV3Extension.EV3.BatteryLevel">
+            <summary>
+            Возвращает текущий заряд батарей, от 0 до 100.
+            </summary>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Motor">
+            <summary>
+            Управление моторами, подключенными к блоку EV3. Для функции Motor необходимо указать один или несколько портов, к которым подключены моторы, например "A", "BC", "ABD".
+            Для блоков, подключенных к главному блоку по USB порты указываются так: "3BC", "2A". В этом режиме только двигатели одного блока доступны в одной команде.
+            Скорость и Мощность - разные понятия. При вызове команды для вращения мотора с постоянной скоротью, электрическая мощность, подаваемая на него будет автоматически регулироваться, чтобы поддерживать заданную скорость.
+            При вызове команды для вращения мотора с постоянной мощностью, его скорость будет зависеть от сопротивления, которое он испытывает во время работы.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.Stop(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Остановить один или несколько моторов. Команда завершает так же все запланированные или незавершенные команды управления этими моторами.
+            </summary>
+            <param name="ports">Порт(ы) моторов</param>
+            <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.Start(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запустить один или несколько моторов с указанной скоростью или изменить скорость уже запущенных моторов на указанную.
+            </summary>
+            <param name="ports">Порт(ы) моторов</param>
+            <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.StartPower(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запустить один или несколько моторов с указанной мощностью или изменить мощность уже запущенных моторов на указанную.
+            </summary>
+            <param name="ports">Порт(ы) моторов</param>
+            <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.StartSync(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Синхронно запустить два мотора с указанными скоростями в режиме контроля за их вращением.
+            Если один мотор будет испытывать нагрузку, которая замедлит его скорость, второй мотор пропорционально замедлится, чтобы сохранить траекторию движения.
+            </summary>
+            <param name="ports">Имена двух портов для моторов (например "AB" или "CD").</param>
+            <param name="speed1">Скорость от -100 (полный назад) до 100 (полный вперед) мотора с младшим по алфавиту номером порта</param>
+            <param name="speed2">Скорость от -100 (полный назад) до 100 (полный вперед) мотора со старшим по алфавиту номером порта</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.GetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запросить текущую скорость мотора
+            </summary>
+            <param name="port">Порт мотора</param>
+            <returns>Текущая скорость в диапазоне от -100 до 100</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.IsBusy(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверить один или несколько моторов на занятость. 
+            </summary>
+            <param name="ports">Порты моторов</param>
+            <returns>"True" если хотя бы один из моторов запущен, "False" в противном случае.</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.Schedule(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запустить один или несколько моторов с указанной скоростью с возможностью плавного старта и плавного замедления.
+            Скорость может регулироваться в пределах общего угла поворота, в Зоне1 двигатель разгоняется до указанной скорости, в Зоне2 поддерживает ее, в Зоне3 - замедляется до полной остановки.
+            Полный угол, на который повернется мотор - это сумма углов поворота Зона1 + Зона2 + Зона3.
+            Команда передает управление в программу сразу, не ждет, пока мотор повернется. Чтобы отследить окончания отработки команды, используйте IsBusy(). Чтобы дождаться конца, пока мотор закончит отработку команды - используй Wait().
+            </summary>
+            <param name="ports">Порты моторов</param>
+            <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед)</param>
+            <param name="degrees1">Зона1: угл поворота мотора, в пределах которой он разгоняется</param>
+            <param name="degrees2">Зона2: угл поворота мотора, в пределах которой он поддерживает указанную скорость</param>
+            <param name="degrees3">Зона3: угл поворота мотора, в пределах которой он плавно замедляется до полной остановки</param>
+            <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.SchedulePower(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запустить один или несколько моторов с указанной мощностью с возможностью плавного старта и плавного замедления.
+            Мощность может регулироваться в пределах общего угла поворота, в Зоне1 двигатель плавно наращивает мощность до указанной, в Зоне2 поддерживает ее, в Зоне3 - плавно уменьшает подаваемую мощность до полной остановки.
+            Полный угол, на который повернется мотор - это сумма углов поворота Зона1 + Зона2 + Зона3.
+            Команда передает управление в программу сразу, не ждет, пока мотор повернется. Чтобы отследить окончания отработки команды, используйте IsBusy(). Чтобы дождаться конца, пока мотор закончит отработку команды - используй Wait().
+            </summary>
+            <param name="ports">Порты моторов</param>
+            <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед)</param>
+            <param name="degrees1">Зона1: угл поворота мотора, в пределах которой он разгоняется</param>
+            <param name="degrees2">Зона2: угл поворота мотора, в пределах которой он поддерживает указанную скорость</param>
+            <param name="degrees3">Зона3: угл поворота мотора, в пределах которой он плавно замедляется до полной остановки</param>
+            <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.ScheduleSync(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Поворачивает два мотора синхронно на определенное количество градусов.
+            Синхронная работа двигателей означает, что когда один двигатель нагружен и что-то препятствует его вращению, второй двигатель пропорционально замедлится или даже вообще остановится.
+            Это команда особенно полезна для для роботов с двумя независимыми колесами - для возможности сохранить траекторию движения.
+            Угол, на который будет повернуты моторы относится к мотору с наибольшей скоростью вращения, угол поворота второго мотора будет рассчитан пропорционально его скорости.
+            Команда передает управление в программу сразу, не ждет, пока мотор повернется. Чтобы отследить окончания отработки команды, используйте IsBusy(). Чтобы дождаться конца, пока мотор закончит отработку команды - испольузйте Wait().
+            </summary>
+            <param name="ports">Имена двух портов для моторов (например "AB" или "CD")</param>
+            <param name="speed1">Скорость от -100 (полный назад) до 100 (полный вперед) мотора с младшим по алфавиту номером порта</param>
+            <param name="speed2">Скорость от -100 (полный назад) до 100 (полный вперед) мотора со старшим по алфавиту номером порта</param>
+            <param name="degrees">Угол поворота (мотора с наибольшей скоростью)</param>
+            <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.ResetCount(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Сбросить счетчик оборотов одного или несколько моторов до 0.
+            </summary>
+            <param name="ports">Порты моторов</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.GetCount(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запросить данные счетчика оборота с указанного мотора.
+            Счетчик оборотов работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+            </summary>
+            <param name="port">Порт мотора</param>
+            <returns>Текущее значение счетчика оборотов мотора в градусах</returns>
+        </member>
+      
+        <member name="M:SmallBasicEV3Extension.Motor.GetCountFast(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запросить данные счетчика оборота с указанного мотора.
+            Счетчик оборотов работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+            </summary>
+            <param name="port">Порт мотора. Цыфры вместо букв 0 = A, 1 = B, 2 = C, 3 = D</param>
+            <returns>Текущее значение счетчика оборотов мотора в градусах</returns>
+        </member>
+        
+        <member name="M:SmallBasicEV3Extension.Motor.Move(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Поворачивает один или несколько моторов с заданной скоростью на указанный угол (в градусах).
+            Программа не будет переходить к выполнению следующих команд до тех пор, пока моторы не повернутся на требуемый угол.
+            Если тебе нужно больше возможностей по управлению моторами, например плавный старт и замедление, используй команду Motor.Schedule
+            </summary>
+            <param name="ports">Порты моторов</param>
+            <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед)</param>
+            <param name="degrees">Угол поворота</param>
+            <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.MovePower(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Поворачивает один или несколько моторов с заданной мощностью на указанный угол (в градусах).
+            Программа не будет переходить к выполнению следующих команд до тех пор, пока моторы не повернутся на требуемый угол.
+            Если тебе нужно больше возможностей по управлению моторами, например плавное наращивание мощности или ее уменьшение, используй команду Motor.SchedulePower
+            </summary>
+            <param name="ports">Порты моторов</param>
+            <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед)</param>
+            <param name="degrees">Угол поворота</param>
+            <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.MoveSync(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Поворачивает два мотора синхронно на определенное количество градусов.
+Синхронная работа двигателей означает, что когда один двигатель нагружен и что-то препятствует его вращению, второй двигатель пропорционально замедлится или даже вообще остановится.
+Это команда особенно полезна для роботов с двумя независимыми колесами - для возможнрости сохранить траекторию движения.
+Угол, на который будет повернуты моторы относится к мотору с наибольшей скоростью вращения, угол поворота второго мотора будет рассчитан пропорционально его скорости.
+            </summary>
+            <param name="ports">Имена двух портов для моторов (например "AB" или "CD")</param>
+            <param name="speed1">Скорость от -100 (полный назад) до 100 (полный вперед) мотора с младшим по алфавиту номером порта</param>
+            <param name="speed2">Скорость от -100 (полный назад) до 100 (полный вперед) мотора со старшим по алавиту номером порта</param>
+            <param name="degrees">Угол поворота (мотора с наибольшей скоростью)</param>
+            <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.StartSteer(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+          <summary>
+          Устанивливает два двигателя для работы с заданной скоростью и относительным направлением.
+Соотношение определяется параметром «Turn», который определяет направление робота с простым приводом на два колеса (учитывая, что последний двигатель установлен слева).
+Двигатели будут синхронизированы, что означает, что если один двигатель испытывает некоторое сопротивление и не может поддерживать свою скорость, другой двигатель также будет замедляться или вообще останавливаться. Это особенно полезно для роботов с двумя независимыми колесами, которые должны идти прямо или совершать определенный поворот.
+Двигатели будут продолжать работать, пока управление не перехватит другая команда.
+          </summary>
+          <param name="ports">Имена двух моторов (например, "AB" или "CD").</param>
+          <param name="speed">Скорость от -100 (полный вперед) до 100 (полный вперед) более быстрого двигателя.</param>
+          <param name="turn">Коэффициент поворота от -100 (вращение влево на месте) до 100 (вращение вправо на месте).</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.ScheduleSteer(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+          <summary>
+          Устанивливает два двигателя для работы с заданной скоростью и относительным направлением.
+Соотношение определяется параметром «Turn», который определяет направление робота с простым приводом на два колеса (учитывая, что последний двигатель установлен слева).
+Двигатели будут синхронизированы, что означает, что если один двигатель испытывает некоторое сопротивление и не может поддерживать свою скорость, другой двигатель также будет замедляться или вообще останавливаться. Это особенно полезно для роботов с двумя независимыми колесами, которые должны идти прямо или совершать определенный поворот.
+Угол перемещения для двигателя с более высокой скоростью.
+Команда передает управление в программу сразу, не ждет, пока мотор повернется. Чтобы отследить окончания отработки команды, используйте IsBusy(). Чтобы дождаться конца, пока мотор закончит отработку команды - испольузйте Wait().
+          </summary>
+          <param name="ports">Имена двух моторов (например, "AB" или "CD").</param>
+          <param name="speed">Скорость от -100 (полный вперед) до 100 (полный вперед) более быстрого двигателя.</param>
+          <param name="turn">Коэффициент поворота от -100 (вращение влево на месте) до 100 (вращение вправо на месте).</param>
+          <param name="degrees">Угол, на который должен повернуться более быстрый мотор.</param>
+          <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.MoveSteer(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+          <summary>
+          Устанивливает два двигателя для работы с заданной скоростью и относительным направлением.
+Соотношение определяется параметром «Turn», который определяет направление робота с простым приводом на два колеса (учитывая, что последний двигатель установлен слева).
+Двигатели будут синхронизированы, что означает, что если один двигатель испытывает некоторое сопротивление и не может поддерживать свою скорость, другой двигатель также будет замедляться или вообще останавливаться. Это особенно полезно для роботов с двумя независимыми колесами, которые должны идти прямо или совершать определенный поворот.
+Угол перемещения для двигателя с более высокой скоростью.
+          </summary>
+          <param name="ports">Имена двух моторов (например, "AB" или "CD").</param>
+          <param name="speed">Скорость от -100 (полный вперед) до 100 (полный вперед) более быстрого двигателя.</param>
+          <param name="turn">Коэффициент поворота от -100 (вращение влево на месте) до 100 (вращение вправо на месте).</param>
+          <param name="degrees">Угол, на который должен повернуться более быстрый мотор.</param>
+          <param name="brake">"True", если следует затормозить и удерживать положение моторов после завершения движения.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.Invert(Microsoft.SmallBasic.Library.Primitive)">
+          <summary>
+          Инвертирует полярность (направление) одного или нескольких двигателей. Это повлияет на все будущие команды, которые управляют этими двигателями, а также инвертируются показания энкодера и скорости.
+  Эта операция позволяет легко изменить направление вращения двигателя без изменения остальной части программы.
+  Вам просто нужно добавить одну команду Motor.Invert() в самом начале программы. Обратите внимание, что далее нельзя будет отключить инверсию.
+          </summary>
+          <param name="ports">Номер порта мотора(ов)</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Motor.Wait(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Подождать, пока моторы не закончат выполнять команды Schedule, Move, Steer или Stop.
+            Использование этой команды, как правило, лучше, чем вызов IsBusy() в цикле.
+            </summary>
+            <param name="ports">Порты моторов</param>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Properties.Resources">
+            <summary>
+            Сильно специализированные команды. Для опытных пользователей. 
+            </summary>
+        </member>
+        <member name="P:SmallBasicEV3Extension.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmallBasicEV3Extension.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Sensor">
+            <summary>
+            Работа с датчиками, подключенными к блоку EV3. 
+            Чтобы указать локальный датчик, используется номер порта 1..4, для указания номеров портов на первом в цепочке подключенных по USB блоках используйте 5..8, на третьем - 9..12
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.GetName(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запросить имя и текущий режим работы датчика, подключенного к указанному порту.
+            Эта команда предназначена прежде всего для диагностики, т.к. ты как правило знаешь, куда и какие датчики подключил
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <returns>Текст описания (например "TOUCH")</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.GetType(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запросить цифровой идентификатор датчика, подключенного к указанному порту.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <returns>Цифровой идентификатор датчика (например 16 для датчика нажатия)</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.GetMode(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Запросить текущий режим работы датчика, подключенного к указанному порту.
+            Многие датчики умеют работать в различных режимах. Например цветосветовой датчик умеет работать с режиме измерение отраженного света, в режиме измерения внешней освещенности, в режиме измерения цвета.
+            При подключении датчика он как правило работает в режиме 0, затем режим можно изменить в программе.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <returns>Текущий режим работы датчика (0 для режима по умолчанию)</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.SetMode(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Переключить режим работы датчика, подключенного к указанному порту.
+            Датчики могут работать с различных режимах, например:
+            EV3 датчик цвета, режимы 0 - отраженный свет, 1 - внешняя освещенность, 2 - цвет.
+            Для уточнения какой датчик в какой режим можно переключить - смотрите документацию.
+            Программа не продолжится до тех пор, пока датчик не переключится в новый режим и данные с него не будут доступны.
+            Обратите внимание, что датчик будет оставаться в выбранном режиме даже после того, как программа завершит работу, поэтому
+            чтобы избежать путаницы всегда устанавливайте режим в начале программы перед использованием датчика.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <param name="mode">Новый режим работы из перечня разрешенных для данного типа датчика</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.IsBusy(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверить, не занят ли датчик в данный момент сменой режима или инициализацией. Во время переключения датчик некоторое время не доступен (занят).
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <returns>"True" если датчик занят (не доступен)</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.Wait(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Дождаться, пока датчик не переключится в новый режим или не инициализируется. 
+            Обычно тебе не нужно использовать эту команду, так как SetMode() дожидается смены режима.
+            Если ты используешь параллельные задачи - без этой команды не обойтись - в ней датчик мог менять режим и стать на время недоступным.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.ReadPercent(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Прочитать текущее показание датчика с отображением его в процентах (0..100).
+            Большинство датчиков могут перевести свои показания в проценты, например у датчика нажатия 0 - не нажат, 100 - нажат.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <returns>Текущее показание датчика (Пример для датчика освещенности 0 - очень темно, 100 - очень светло)</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.ReadRaw(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Прочитать текущее показание датчика в "сыром" режиме, без перевода в проценты.
+            В некоторых режимах показания датчика не могут быть переведены в проценты, например цвета, в этом случае используется команда чтения ReadRaw.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <param name="values">Размер возвращаемого массива с показаниями</param>
+            <returns>Массив с показаниями датчика с требуемым числом элементов. Массив начинается с 0 элемента. Элементы, в которых данные не получены, будут равны 0</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.ReadRawValue(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Похожа на ReadRaw, но возвращает только одно "сырое" показание с датчика, а не массив показаний.
+            Например для работы с цветосветовым датчиком в режиме определения цвета используйте функцию ReadRawValue(порт, 0).
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <param name="index">Индекс элемента массива с показаниями, начиная с 0</param>
+            <returns>Один элемент массива с показаниями</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.FirstRawValue(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Похожа на ReadRawValue, но возвращает только первое "сырое" значение с датчика из всех возможных значений. Имеет более высокую скорость получения данных.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <returns>Первый элемент из массива с показаниями</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.CommunicateI2C(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Взаимодействие с устройством, работающим по протоколу I2C, подключенному к одному из портов датчиков.
+            Эта команда может посылать и принимать несколько байт по шине I2C, с ее помошью можно работать с датчиками сторонних производителей, использующих этот протокол обмена или, например, с Arduino.
+            Обратите внимание, команда работает в пределах одного блока EV3 и только с подчиненными (slave) I2C устройствами.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <param name="address">Адрес (0 - 127) подчиненного I2C устройства на шине I2C</param>
+            <param name="writebytes">Количество байт для отправки I2C-устройству (максимум 31).</param>
+            <param name="readbytes">Количество байт для приема с I2C-устройства (максимум 32, минимум 1).</param>
+            <param name="writedata">Массив, содержащий байты для отправки (индекс первого элемента - 0)</param>
+            <returns>Массив, содержащий запрошенное количество принятых байт с I2C-устройства (индекс первого элемента - 0)</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.ReadI2CRegister(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+          <summary>
+          Эта команда обращается к одному устройству на шине I2C и пытается получить значение одного регистра подчиненного устройства I2C.
+Обратите внимание, что эта команда не работает в режиме подключения шлейфом.
+          </summary>
+          <param name="port">Номер порта датчика</param>
+          <param name="address">Адрес (0 - 127) подчиненного I2C устройства на шине I2C</param>
+          <param name="registernumber">Номер регистра на подчиненном устройстве для чтения данных.</param>
+          <returns>Данные в регистре.</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.ReadI2CRegisters(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+          <summary>
+          Эта команда обращается к одному устройству на шине I2C и пытается получить значение нескольких регистров подчиненного устройства I2C.
+Обратите внимание, что эта команда не работает в режиме подключения шлейфом.
+          </summary>
+          <param name="port">Номер порта датчика</param>
+          <param name="address">Адрес (0 - 127) подчиненного I2C устройства на шине I2C</param>
+          <param name="registernumber">Номер первого регистра на подчиненном устройстве для чтения данных.</param>
+          <param name="readbytes">Количество регистров для чтения (максимум 32).</param>
+          <returns>Массив, содержащий запрошенные значения. Начинается с 0 индекса.</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.WriteI2CRegister(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+          <summary>
+          Эта команда обращается к одному устройству на шине I2C и пытается перезаписать значение одного регистра подчиненного устройства I2C.
+Обратите внимание, что эта команда не работает в режиме подключения шлейфом.
+          </summary>
+          <param name="port">Номер порта датчика</param>
+          <param name="address">Адрес (0 - 127) подчиненного I2C устройства на шине I2C</param>
+          <param name="registernumber">Регистр на подчиненном устройстве, с которого прочитаются данные.</param>
+          <param name="value">Значение записанное в регистр.</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.WriteI2CRegisters(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+          <summary>
+          Эта команда обращается к одному устройству на шине I2C и пытается перезаписать значение нескольких регистров подчиненного устройства I2C.
+Обратите внимание, что эта команда не работает в режиме подключения шлейфом.
+          </summary>
+          <param name="port">Номер порта датчика</param>
+          <param name="address">Адрес (0 - 127) подчиненного I2C устройства на шине I2C</param>
+          <param name="registernumber">Номер первого регистра на подчиненном устройстве для записи данных.</param>
+          <param name="writebytes">Количество регистров для записи (максимум 30).</param>
+          <param name="writedata">Массив, содержащий байты для записи (начинается с 0).</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor.SendUARTData(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Посылает данные по протоколу UART устройству, подключенному к порту датчика.
+            Функция полезна для общения с самодельными датчиками и исполнительными устройствами.
+            </summary>
+            <param name="port">Номер порта датчика</param>
+            <param name="writebytes">Количество байт для отправки на устройство (максимум 32).</param>
+            <param name="writedata">Массив, содержащий байты для отправки по UART (младший индекс 0).</param>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Mailbox">
+            <summary>
+            Отправка сообщений между блоками EV3 посредством Bluetooth
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Mailbox.Create(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Создать почтовый ящик с указанным именем, который будет принимать входящие сообщения, адресованные этому блоку EV3 в данный ящик.
+            Только после создания ящика входящие сообщения будут сохраняться. Максимальное количество создаваемых ящиков - 30.
+            </summary>
+            <param name="boxname">Имя почтового ящика для создания</param>
+            <returns>Цифровой идентификатор почтового ящика. Необходим для получения сообщения из ящика</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Mailbox.Send(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Отправить сообщение на другой блок EV3 в указанный почтовый ящик.
+            </summary>
+            <param name="brickname">Имя блока EV3, на который отправляется сообщение. Bluetooth-соединение с блоком должно быть предварительно установлено. Это поле можно оставить пустым, тогда сообщение будет отправлено всем подключенным блокам EV3.</param>
+            <param name="boxname">Имя почтового ящика, в который будет отправлено сообщение</param>
+            <param name="message">Сообщение в виде текста. Пока поддерживаются только текстовые сообщения</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Mailbox.IsAvailable(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Проверка наличия нового сообщения в указанном локальном почтовом ящике.
+            </summary>
+            <param name="id">Цифровой идентификатор почтового ящика</param>
+            <returns>"True" если сообщение пришло. "False" в противном случае</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Mailbox.Receive(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Получить последнее сообщение из указанного локального почтового ящика. Если ящик пуст, программа будет ожидать до тех пор, пока не появится новое сообщение в ящике.
+            После прочтения сообщение будет удалено и следующий вызов Receive будет ожидать нового сообщения в ящике. Чтобы избежать блокировки в его ожидании, используйте IsAvailable().
+            Если почтовый ящик с таким именем не существует, команда возвратит пустой текст.
+            </summary>
+            <param name="id">Цифровой идентификатор почтового ящика</param>
+            <returns>Сообщение в виде текста. Пока поддерживаются только текстовые сообщения</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Mailbox.Connect(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Установить соединение с другим блоком EV3 по Bluetooth.
+            Только после того как соединение установлено (этой командой или из меню блока EV3) могут отправляться и приниматься сообщения.
+            </summary>
+            <param name="brickname">Имя блока EV3, с которым нужно установить соединение</param>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Speaker">
+            <summary>
+            Использование динамика на блоке EV3 для воспроизведения тонов, нот или звуковых файлов.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Speaker.Stop">
+            <summary>
+            Остановить звучание любого проигрываемого в данный момент тона, ноты или звукового файла.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Speaker.Tone(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Воспроизвести тон указанной частоты и длительности.
+            </summary>
+            <param name="volume">Громкость 0 - 100</param>
+            <param name="frequency">Частота, Гц в диапазоне 250 - 10000</param>
+            <param name="duration">Длительность тона в миллисекундах</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Speaker.Note(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Воспроизвести ноту указанной высоты и длительности.
+            </summary>
+            <param name="volume">Громкость 0 - 100</param>
+            <param name="note">Нота в виде текста, от "C4" до "B7" с полутонами в виде "C#5"</param>
+            <param name="duration">Длительность ноты в миллисекундах</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Speaker.Play(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Воспроизвести звуковой файл, хранящийся на блоке. Поддерживаются файлы только в формате .rsf
+            </summary>
+            <param name="volume">Громкость 0 - 100</param>
+            <param name="filename">Имя звукового файла без расширения .rsf Имя файла может содержать относительный путь от папки «prjs» путь или абсолютный, начиная с корня ФС '/'</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Speaker.IsBusy">
+            <summary>
+            Проверить, занят ли динамик воспроизведением тона\ноты\звука
+            </summary>
+            <returns>"True", если звук в данный момент проигрывается, "False" в противном случае.</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Speaker.Wait">
+            <summary>
+            Дождаться, пока проигрываемый в данный момент звук закончит воспроизводиться. Если звук не воспроизводится, команда сразу же передает управлению программе.
+            </summary>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Thread">
+            <summary>
+            Этот объект предназначен для работы с потоками. Поток представляет собой фрагмент программного кода, который может работать независимо и параллельно основной программе.
+            Например, ты можешь создать поток, который будет управлять двигателями, в то время как основная программа будет опрашивать датчики или ожидать действий пользователя.
+            Вообще говоря, многопоточность - сложная тема, не для начинающих. В ней стоит разобраться дополнительно.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Thread.Yield">
+            <summary>
+            Уступить процессор другому потоку. Команда дает знать другим потокам, что он простаивает и они могут более активно занимать ресурсы процессора.
+            Часто потоки не выполняются параллельно, процессор переключается между потоками настолько быстро, что создается иллюзия параллельного выполнения.
+            Если в потоке выполняется какое-то ожидание или бездействие, то эта команда может уступить управление процессором, чтобы другие потоки могли быстрее выполнить свою работу.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Thread.CreateMutex">
+            <summary>
+            Создать мьютекс (сокр. от «mutual exclusion») - взаимное исключение, которое может быть использовано для синхронизации потоков.
+            Мьютекс может быть только создан, но не удален. Лучше всего создать все необходимые мьютексы при старте программы и держать их номера в глобальных переменных.
+            </summary>
+            <returns>Идентификатор мьютекса. Будет использоваться в дальнейшем для блокировки и разблокировки</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Thread.Lock(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Попытаться блокировать указанный мьютекс. Установка блокировки не позволит никакому другому потоку установить блокировку на него.
+			Если другой поток уже заблокировал мьютекс, текущий поток будет ждать, пока блокировка не будет снята, а затем сам заблокирует его (как только вызов функции закончится, то значит мьютекс был успешно заблокирован).
+			Этот механизм блокировки обычно используется для защиты некоторых структур данных или других ресурсов от использования двумя потоками одновременно. Каждый вызов блокировки должен быть сопряжен с вызовом последующей разблокировки.
+            </summary>
+            <param name="mutex">Идентификатор мьютекса (полученный от CreateMutex() )</param>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Thread.Unlock(Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Снять блокировку указанного мьютекса. Команду можно использовать только в случае, если блокировка действительно была ранее установлена.
+            </summary>
+            <param name="mutex">Идентификатор мьютекса (полученный от CreateMutex() )</param>
+        </member>
+        <member name="E:SmallBasicEV3Extension.Thread.Run">
+            <summary>
+            Запустить новый поток (параллельную задачу). Просто введите процедуру и она начнет выполняться в качестве независимого потока (пример: Thread.Run = MYSUB).
+            Любая процедура может быть преобразована в независимы поток, однако одна процедура может быть преобразована в поток только однократно, два потока из нее сделать не удастся.
+            При использовании Thread.Run в то время, как процедура уже работает, вызов потока поставится в очередь до тех пор, пока она не завершит свою работу. Это обеспечит корректную работу, но запуск потока вероятно может произойти позже запланированного.
+            Все запущенные потоки остановятся, как только основная программа завершит свою работу.
+            </summary>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Vector">
+            <summary>
+            Объект для выполнения операций над большим количеством чисел. Они называются векторами и будут храниться с использованием массивов с последовательными индексами (начиная с 0).
+            В случае выполнений операций над массивами с различным числом элементов, недостающие элементы массивов будут рассматриваться кк элементы, содержащие 0.
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Vector.Init(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Создать вектор заданного размера с указанным количеством элементов, содержащих одинаковое число.
+            </summary>
+            <param name="size">Размер вектора</param>
+            <param name="value">Значение, для всех элементов</param>
+            <returns>Созданный вектор</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Vector.Data(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Создает вектор заданного размера и заполняет элементы данными, полученными из текста. Каждое число должно быть десятичным и разделяется пробелами.
+            Например: V = Vector.Data(4, "47 11 8 15") создаст массив чисел с 4 значениями 47 11 8 15. (Первый индекс - 0)
+            </summary>
+            <param name="size">Размер создаваемого вектора</param>
+            <param name="data">Данные в текстовой форме, которые внесутся в массив. Если текст содержит недостаточно элементов, то введется 0, чтобы достичь указанного количества элементов</param>
+            <returns>Созданный вектор</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Vector.Add(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Сложение двух векторов путем сложения соответствующих элементов (C[0]=A[0]+B[0], C[1]=A[1]+B[1]...)
+            </summary>
+            <param name="size">Количество элементов для сложения</param>
+            <param name="A">Первый вектор</param>
+            <param name="B">Второй вектор</param>
+            <returns>Массив, содержащий результат сложения</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Vector.Sort(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Сортировать элементы вектора в порядке возрастания.
+            </summary>
+            <param name="size">Количество элементов для сортировки</param>
+            <param name="A">Массив, содержащий элементы для сортировки</param>
+            <returns>Массив, содержащий элементы в порядке возрастания значений</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Vector.Multiply(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Операция умножения матриц.
+            Входные вектора рассматриваются как двумерные матрицы заданной ширины и высоты. Отдельные строки матрицы хранятся в векторе непосредственно одна за другой.
+            Чтобы узнать больше об этой математической операции, см. https://ru.wikipedia.org/wiki/Умножение_матриц
+            </summary>
+            <param name="rows">Количество строк в результирующей матрице</param>
+            <param name="columns">Количество столбцов в результирующей матрице</param>
+            <param name="k">Количество столбцов в исходной матрице А и количество строк в исходной матрице В</param>
+            <param name="A">Матрица А размера строк * k</param>
+            <param name="B">Матрица В размера k * столбцов</param>
+            <returns>Матрица, содержащая результаты умножения</returns>
+        </member>
+      <!-- Motor A -->
+        <member name="T:SmallBasicEV3Extension.MotorA">
+          <summary>
+          Набор быстрых методов для мотора, подключенного к порту A
+         </summary>
+       </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.GetTacho">
+          <summary>
+           Запросить данные счетчика оборота с указанного мотора.
+            Счетчик оборотов работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+            Может иметь как положительные, так и отрицательные показания. Зависит от направления движения мотора.
+         </summary>
+          <returns>Текущее значение счетчика оборотов мотора в градусах</returns>
+       </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.GetSpeed">
+         <summary>
+            Запросить данные о скорости мотора.
+            Счетчик скорости работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+            Может иметь как положительные, так и отрицательные показания. Зависит от направления движения мотора.
+         </summary>
+         <returns>Текущее значение скорости мотора от -100 до 100</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.ResetCount">
+          <summary>
+            Сброс счётчика оборотов мотора порт А.
+          </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.SetDirectPolarity">
+         <summary>
+           Задать прямую полярность мотора порт А.
+         </summary>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.SetReversPolarity">
+        <summary>
+          Задать обратную полярность мотора порт А.
+        </summary>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.Off">
+        <summary>
+          Остановить мотор порт А. Мотор продолжит вращаться по инерции.
+        </summary>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.OffAndBrake">
+        <summary>
+          Остановить мотор порт А. Мотор полностью остановится.
+        </summary>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.IsLarge">
+        <summary>
+          Установить тип мотора для порта А - Большой мотор.
+        </summary>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.IsMedium">
+        <summary>
+          Установить тип мотора для порта А - Средний мотор.
+        </summary>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность мотора для порта А.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость мотора для порта А.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.Start">
+        <summary>
+          Запустить мотора для порта А. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность мотора для порта А, затем запустить мотор.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+        <member name="M:SmallBasicEV3Extension.MotorA.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость мотора для порта А, затем запустить мотор.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor B -->
+      <member name="T:SmallBasicEV3Extension.MotorB">
+        <summary>
+          Набор быстрых методов для мотора, подключенного к порту B
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.GetTacho">
+        <summary>
+          Запросить данные счетчика оборота с указанного мотора.
+          Счетчик оборотов работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+          Может иметь как положительные, так и отрицательные показания. Зависит от направления движения мотора.
+        </summary>
+        <returns>Текущее значение счетчика оборотов мотора в градусах</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.GetSpeed">
+        <summary>
+          Запросить данные о скорости мотора.
+          Счетчик скорости работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+          Может иметь как положительные, так и отрицательные показания. Зависит от направления движения мотора.
+        </summary>
+        <returns>Текущее значение скорости мотора от -100 до 100</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.ResetCount">
+        <summary>
+          Сброс счётчика оборотов мотора порт B.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.SetDirectPolarity">
+        <summary>
+          Задать прямую полярность мотора порт B.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.SetReversPolarity">
+        <summary>
+          Задать обратную полярность мотора порт B.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.Off">
+        <summary>
+          Остановить мотор порт B. Мотор продолжит вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.OffAndBrake">
+        <summary>
+          Остановить мотор порт B. Мотор полностью остановится.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.IsLarge">
+        <summary>
+          Установить тип мотора для порта B - Большой мотор.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.IsMedium">
+        <summary>
+          Установить тип мотора для порта B - Средний мотор.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность мотора для порта B.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость мотора для порта B.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.Start">
+        <summary>
+          Запустить мотора для порта B. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность мотора для порта B, затем запустить мотор.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorB.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость мотора для порта B, затем запустить мотор.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor C -->
+      <member name="T:SmallBasicEV3Extension.MotorC">
+        <summary>
+          Набор быстрых методов для мотора, подключенного к порту C
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.GetTacho">
+        <summary>
+          Запросить данные счетчика оборота с указанного мотора.
+          Счетчик оборотов работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+          Может иметь как положительные, так и отрицательные показания. Зависит от направления движения мотора.
+        </summary>
+        <returns>Текущее значение счетчика оборотов мотора в градусах</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.GetSpeed">
+        <summary>
+          Запросить данные о скорости мотора.
+          Счетчик скорости работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+          Может иметь как положительные, так и отрицательные показания. Зависит от направления движения мотора.
+        </summary>
+        <returns>Текущее значение скорости мотора от -100 до 100</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.ResetCount">
+        <summary>
+          Сброс счётчика оборотов мотора порт C.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.SetDirectPolarity">
+        <summary>
+          Задать прямую полярность мотора порт C.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorA.SetReversPolarity">
+        <summary>
+          Задать обратную полярность мотора порт C.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.Off">
+        <summary>
+          Остановить мотор порт C. Мотор продолжит вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.OffAndBrake">
+        <summary>
+          Остановить мотор порт C. Мотор полностью остановится.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.IsLarge">
+        <summary>
+          Установить тип мотора для порта C - Большой мотор.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.IsMedium">
+        <summary>
+          Установить тип мотора для порта C - Средний мотор.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность мотора для порта C.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость мотора для порта C.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.Start">
+        <summary>
+          Запустить мотора для порта C. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность мотора для порта C, затем запустить мотор.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorC.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость мотора для порта C, затем запустить мотор.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor D -->
+      <member name="T:SmallBasicEV3Extension.MotorD">
+        <summary>
+          Набор быстрых методов для мотора, подключенного к порту D
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.GetTacho">
+        <summary>
+          Запросить данные счетчика оборота с указанного мотора.
+          Счетчик оборотов работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+          Может иметь как положительные, так и отрицательные показания. Зависит от направления движения мотора.
+        </summary>
+        <returns>Текущее значение счетчика оборотов мотора в градусах</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.GetSpeed">
+        <summary>
+          Запросить данные о скорости мотора.
+          Счетчик скорости работает даже если мотор вращается не по командам блока EV3, а путем приложения внешней силы.
+          Может иметь как положительные, так и отрицательные показания. Зависит от направления движения мотора.
+        </summary>
+        <returns>Текущее значение скорости мотора от -100 до 100</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.ResetCount">
+        <summary>
+          Сброс счётчика оборотов мотора порт D.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.SetDirectPolarity">
+        <summary>
+          Задать прямую полярность мотора порт D.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.SetReversPolarity">
+        <summary>
+          Задать обратную полярность мотора порт D.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.Off">
+        <summary>
+          Остановить мотор порт D. Мотор продолжит вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.OffAndBrake">
+        <summary>
+          Остановить мотор порт D. Мотор полностью остановится.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.IsLarge">
+        <summary>
+          Установить тип мотора для порта D - Большой мотор.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.IsMedium">
+        <summary>
+          Установить тип мотора для порта D - Средний мотор.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность мотора для порта D.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость мотора для порта D.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.Start">
+        <summary>
+          Запустить мотора для порта D. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность мотора для порта D, затем запустить мотор.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorD.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость мотора для порта D, затем запустить мотор.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor AB -->
+      <member name="T:SmallBasicEV3Extension.MotorAB">
+        <summary>
+          Набор быстрых методов для моторов, подключенных к портам AB
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAB.Off">
+        <summary>
+          Остановить моторы порты AB. Моторы продолжат вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAB.OffAndBrake">
+        <summary>
+          Остановить моторы порты AB. Моторы полностью остановятся.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAB.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов AB.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAB.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов AB.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAB.Start">
+        <summary>
+          Запустить моторы портов AB. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAB.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов AB, затем запустить моторы.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAB.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов AB, затем запустить моторы.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor AC -->
+      <member name="T:SmallBasicEV3Extension.MotorAC">
+        <summary>
+          Набор быстрых методов для моторов, подключенных к портам AC
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAC.Off">
+        <summary>
+          Остановить моторы порты AC. Моторы продолжат вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAC.OffAndBrake">
+        <summary>
+          Остановить моторы порты AC. Моторы полностью остановятся.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAC.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов AC.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAC.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов AC.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAC.Start">
+        <summary>
+          Запустить моторы портов AC. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAC.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов AC, затем запустить моторы.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAC.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов AC, затем запустить моторы.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor AD -->
+      <member name="T:SmallBasicEV3Extension.MotorAD">
+        <summary>
+          Набор быстрых методов для моторов, подключенных к портам AD
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAD.Off">
+        <summary>
+          Остановить моторы порты AD. Моторы продолжат вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAD.OffAndBrake">
+        <summary>
+          Остановить моторы порты AD. Моторы полностью остановятся.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAD.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов AD.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAD.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов AD.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAD.Start">
+        <summary>
+          Запустить моторы портов AD. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAD.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов AD, затем запустить моторы.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorAD.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов AD, затем запустить моторы.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor BC -->
+      <member name="T:SmallBasicEV3Extension.MotorBC">
+        <summary>
+          Набор быстрых методов для моторов, подключенных к портам BC
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBC.Off">
+        <summary>
+          Остановить моторы порты BC. Моторы продолжат вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBC.OffAndBrake">
+        <summary>
+          Остановить моторы порты BC. Моторы полностью остановятся.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBC.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов BC.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBC.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов BC.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBC.Start">
+        <summary>
+          Запустить моторы портов BC. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBC.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов BC, затем запустить моторы.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBC.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов BC, затем запустить моторы.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor BD -->
+      <member name="T:SmallBasicEV3Extension.MotorBD">
+        <summary>
+          Набор быстрых методов для моторов, подключенных к портам BD
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBD.Off">
+        <summary>
+          Остановить моторы порты BD. Моторы продолжат вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBD.OffAndBrake">
+        <summary>
+          Остановить моторы порты BD. Моторы полностью остановятся.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBD.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов BD.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBD.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов BD.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBD.Start">
+        <summary>
+          Запустить моторы портов BD. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBD.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов BD, затем запустить моторы.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorBD.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов BD, затем запустить моторы.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+    <!-- Motor CD -->
+      <member name="T:SmallBasicEV3Extension.MotorCD">
+        <summary>
+          Набор быстрых методов для моторов, подключенных к портам CD
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorCD.Off">
+        <summary>
+          Остановить моторы порты CD. Моторы продолжат вращаться по инерции.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorCD.OffAndBrake">
+        <summary>
+          Остановить моторы порты CD. Моторы полностью остановятся.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorCD.SetPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов CD.
+        </summary>
+        <param name="power">Мощность от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorCD.SetSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов CD.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorCD.Start">
+        <summary>
+          Запустить моторы портов CD. Будет использована скорость, или мощнсть установленная ранее
+          Если ни каких значений ранее не задовалось, то будет установлено значение 0.
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorCD.StartPower(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить мощность моторов для портов CD, затем запустить моторы.
+        </summary>
+        <param name="power">Мощностьот -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.MotorCD.StartSpeed(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Установить скорость моторов для портов CD, затем запустить моторы.
+        </summary>
+        <param name="speed">Скорость от -100 (полный назад) до 100 (полный вперед).</param>
+      </member>
+      <!-- -->
+      <!-- Motor MATRIX -->
+      <member name="T:SmallBasicEV3Extension.Matrix">
+        <summary>
+          Набор быстрых методов для работы с двумерными массивами
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Matrix.Init">
+        <summary>
+          Создать новый массив указанного размера и заполнить его указанными значениями.
+        </summary>
+        <param name="size">Размер массива (не более 30000).</param>
+        <param name="value">Значение, которым заполняется массив.</param>
+      </member>
+      <!-- -->
+      <!-- Motor ROW -->
+      <member name="T:SmallBasicEV3Extension.Row">
+        <summary>
+          Набор быстрых методов для работы с одномерными массивами
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Row.Init(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Создать новый массив указанного размера и заполнить его указанными значениями.
+        </summary>
+        <param name="size">Размер массива (не более 30000).</param>
+        <param name="value">Значение, которым заполняется массив.</param>
+        <returns>Созданный массив</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Row.Delete(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Удалить массив.
+        </summary>
+        <param name="array">Массив.</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Row.Read(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Причитать значение из массива по указанному индексу.
+        </summary>
+        <param name="array">Массив.</param>
+        <param name="index">Индекс.</param>
+        <returns>Прочитанное значение</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Row.Write(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Записать значение в массив по указанному индексу.
+        </summary>
+        <param name="array">Массив.</param>
+        <param name="index">Индекс.</param>
+        <param name="value">Значение.</param>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Row.Size(Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Получить размер массива.
+        </summary>
+        <param name="array">Массив.</param>
+        <returns>Размер массива</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Row.Resize(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Изменить размер массива.
+        </summary>
+        <param name="array">Изменяемый массив.</param>
+        <param name="size">Новый размер массива (не более 30000).</param>
+      </member>
+      <!-- -->
+    </members>
+</doc>

@@ -1,0 +1,71 @@
+' Simple function call demonstration without recursion but with
+' numerical call parameters and return value.
+F.Start = SUM6
+F.Function("SUM6", "A B C D E F")
+Sub SUM6
+  F.ReturnNumber(F.Call2("SUM", F.Call3("SUM3", F.Get("A"), F.Get("B"), F.Get("C")), F.Call3("SUM3", F.Get("D"), F.Get("E"), F.Get("F"))))
+EndSub
+
+F.Start = SUM3
+F.Function("SUM3", "A B C")
+Sub SUM3
+  F.ReturnNumber(F.Call2("SUM", F.Get("A"), F.Call2("SUM", F.Get("B"), F.Get("C"))))
+EndSub
+
+F.Start = SUM
+F.Function("SUM", "A B")
+Sub SUM
+  F.ReturnNumber(F.Get("A")+F.Get("B"))
+EndSub
+
+
+' Demonstrate more exotic functions features: Default parameters,  
+' function consisting of multiple subprograms, local variables
+F.Start = LOWEST
+F.Function("LOWEST", "A:1 B:2 C:3   ISLOWER:False") 
+Sub LOWEST
+  If F.Get("A") < F.Get("B") Then
+    TEST_A_LOWER_C()
+    If F.Get("ISLOWER") Then    
+      F.ReturnText("FIRST")
+    Endif
+  Else
+    TEST_B_LOWER_C()
+    If F.Get("ISLOWER") Then    
+      F.ReturnText("MIDDLE")
+    Endif
+  EndIf
+  F.ReturnText("LAST")
+EndSub
+Sub TEST_A_LOWER_C 
+  If F.Get("A") < F.Get("C") Then
+    F.Set("ISLOWER", "True")
+  EndIf  
+EndSub
+Sub TEST_B_LOWER_C 
+  If F.Get("B") < F.Get("C") Then
+    F.Set("ISLOWER", "True")
+  EndIf  
+EndSub
+
+
+' Main function (calls other test functions, but is not recursive itself)
+F.Start = MAIN
+F.Function("MAIN", "L:")
+Sub MAIN
+  ' normal use of global variable
+  TOTAL = F.Call6("SUM6", 6, 3, 1, 4, 2, 5)
+  Assert.Equal(TOTAL,21, "SUM6")
+  
+  '  use of local variable 
+  F.Set("L", F.Call3("LOWEST", 4,7,9))
+  Assert.Equal(F.Get("L"), "FIRST", "1")
+  Assert.Equal(F.Call1("LOWEST", 5), "MIDDLE", "2")
+  Assert.Equal(F.Call2("LOWEST", 5,7), "LAST", "3")
+  
+  ' TextWindow.WriteLine("main done")
+EndSub 
+
+' fire up the MAIN itself
+F.Call0("MAIN")
+Program.Delay(10000)
