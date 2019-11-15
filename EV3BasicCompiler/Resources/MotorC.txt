@@ -59,6 +59,7 @@ inline MOTORC.SETSPEED    // FV
 {
 	MOVEF_8 :0 setSpeedC
 	OUTPUT_SPEED 0 4 setSpeedC
+}
 
 inline MOTORC.SETPOWER   // FV
 {

@@ -59,6 +59,7 @@ inline MOTORD.SETSPEED    // FV
 {
 	MOVEF_8 :0 setSpeedD
 	OUTPUT_SPEED 0 8 setSpeedD
+}
 
 inline MOTORD.SETPOWER   // FV
 {
