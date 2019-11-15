@@ -266,33 +266,6 @@ outofbounds:
 	MOVEF_F 0.0 result
 }
 
-subcall SENSOR.FIRSTRAWVALUE            // FF
-{
-	IN_F port
-	OUT_F result
-
-	DATA8 layer
-	DATA8 no
-	DATA8 index8
-		
-	MOVEF_8 port no
-	SUB8 no 1 no
-	DIV8 no 4 layer
-	MATH MOD8 no 4 no
-
-	DATA32 rawvalue
-	INPUT_READEXT layer no 0 -1 18 1 rawvalue
-	
-	MOVE32_F rawvalue result
-}
-
-inline SENSOR.FIRSTRAWVALUE2    // F
-{
-	DATA32 outSensor2
-	INPUT_READEXT 0 1 0 -1 18 1 outSensor2
-	MOVE32_F outSensor2 :0
-}
-
 subcall SENSOR.COMMUNICATEI2C     // FFFFAA
 {
 	IN_F port

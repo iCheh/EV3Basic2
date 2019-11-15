@@ -100,8 +100,9 @@ namespace EV3BasicCompiler
             readLibraryModule(EV3BasicCompiler.Properties.Resources.MotorBC);
             readLibraryModule(EV3BasicCompiler.Properties.Resources.MotorBD);
             readLibraryModule(EV3BasicCompiler.Properties.Resources.MotorCD);
-            readLibraryModule(EV3BasicCompiler.Properties.Resources.Matrix);
+            //readLibraryModule(EV3BasicCompiler.Properties.Resources.Matrix);
             readLibraryModule(EV3BasicCompiler.Properties.Resources.Row);
+            readLibraryModule(EV3BasicCompiler.Properties.Resources.Time);
         }
 
         private void readLibraryModule(String moduletext)

@@ -126,6 +126,7 @@
     <Content Include="Resources\Row.txt" />
     <Content Include="Resources\Sens.txt" />
     <Content Include="Resources\MotorA.txt" />
+    <Content Include="Resources\Time.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

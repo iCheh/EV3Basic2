@@ -412,11 +412,13 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORAB.OFF // V
         ///{
+        ///	OUTPUT_POWER 0 3 0
         ///	OUTPUT_STOP 0 3 0
         ///}
         ///
         ///inline MOTORAB.OFFANDBRAKE // V
         ///{
+        ///	OUTPUT_POWER 0 3 0
         ///	OUTPUT_STOP 0 3 1
         ///}
         ///
@@ -431,9 +433,7 @@ namespace EV3BasicCompiler.Properties {
         ///	OUTPUT_POWER 0 3 setPowerAB
         ///}
         ///
-        ///inline MOTORAB.STARTSPEED    // FV
-        ///{
-        ///	MOVEF_8 :0 setSp [остаток строки не уместился]&quot;;.
+        ///inline MOTORAB [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorAB {
             get {
@@ -449,12 +449,14 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORAC.OFF // V
         ///{
+        ///	OUTPUT_POWER 0 5 0
         ///	OUTPUT_STOP 0 5 0
         ///}
         ///
         ///inline MOTORAC.OFFANDBRAKE // V
         ///{
-        ///	OUTPUT_STOP 0 51 1
+        ///	OUTPUT_POWER 0 5 0
+        ///	OUTPUT_STOP 0 5 1
         ///}
         ///
         ///inline MOTORAC.SETSPEED    // FV
@@ -468,9 +470,7 @@ namespace EV3BasicCompiler.Properties {
         ///	OUTPUT_POWER 0 5 setPowerAC
         ///}
         ///
-        ///inline MOTORAC.STARTSPEED    // FV
-        ///{
-        ///	MOVEF_8 :0 setS [остаток строки не уместился]&quot;;.
+        ///inline MOTORAC [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorAC {
             get {
@@ -486,11 +486,13 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORAD.OFF // V
         ///{
+        ///	OUTPUT_POWER 0 9 0
         ///	OUTPUT_STOP 0 9 0
         ///}
         ///
         ///inline MOTORAD.OFFANDBRAKE // V
         ///{
+        ///	OUTPUT_POWER 0 9 0
         ///	OUTPUT_STOP 0 9 1
         ///}
         ///
@@ -505,9 +507,7 @@ namespace EV3BasicCompiler.Properties {
         ///	OUTPUT_POWER 0 9 setPowerAD
         ///}
         ///
-        ///inline MOTORAD.STARTSPEED    // FV
-        ///{
-        ///	MOVEF_8 :0 setSp [остаток строки не уместился]&quot;;.
+        ///inline MOTORAD [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorAD {
             get {
@@ -516,7 +516,7 @@ namespace EV3BasicCompiler.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: MOTORA ----------------------------------------------
+        ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: MOTORB ----------------------------------------------
         ///
         ///DATA32 getTachoB
         ///DATA32 tmpTachoB
@@ -559,11 +559,13 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORBC.OFF // V
         ///{
+        ///	OUTPUT_POWER 0 6 0
         ///	OUTPUT_STOP 0 6 0
         ///}
         ///
         ///inline MOTORBC.OFFANDBRAKE // V
         ///{
+        ///	OUTPUT_POWER 0 6 0
         ///	OUTPUT_STOP 0 6 1
         ///}
         ///
@@ -578,9 +580,7 @@ namespace EV3BasicCompiler.Properties {
         ///	OUTPUT_POWER 0 6 setPowerBC
         ///}
         ///
-        ///inline MOTORBC.STARTSPEED    // FV
-        ///{
-        ///	MOVEF_8 :0 setSp [остаток строки не уместился]&quot;;.
+        ///inline MOTORBC [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorBC {
             get {
@@ -596,11 +596,13 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORBD.OFF // V
         ///{
+        ///	OUTPUT_POWER 0 10 0
         ///	OUTPUT_STOP 0 10 0
         ///}
         ///
         ///inline MOTORBD.OFFANDBRAKE // V
         ///{
+        ///	OUTPUT_POWER 0 10 0
         ///	OUTPUT_STOP 0 10 1
         ///}
         ///
@@ -615,9 +617,7 @@ namespace EV3BasicCompiler.Properties {
         ///	OUTPUT_POWER 0 10 setPowerBD
         ///}
         ///
-        ///inline MOTORBD.STARTSPEED    // FV
-        ///{
-        ///	MOVEF_8 :0 s [остаток строки не уместился]&quot;;.
+        ///inline M [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorBD {
             get {
@@ -669,11 +669,13 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORCD.OFF // V
         ///{
+        ///	OUTPUT_POWER 0 10 0
         ///	OUTPUT_STOP 0 10 0
         ///}
         ///
         ///inline MOTORCD.OFFANDBRAKE // V
         ///{
+        ///	OUTPUT_POWER 0 10 0
         ///	OUTPUT_STOP 0 10 1
         ///}
         ///
@@ -688,9 +690,7 @@ namespace EV3BasicCompiler.Properties {
         ///	OUTPUT_POWER 0 12 setPowerCD
         ///}
         ///
-        ///inline MOTORCD.STARTSPEED    // FV
-        ///{
-        ///	MOVEF_8 :0 s [остаток строки не уместился]&quot;;.
+        ///inline M [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorCD {
             get {
@@ -793,7 +793,7 @@ namespace EV3BasicCompiler.Properties {
         ///	MOVE16_F newArray1d :2
         ///}
         ///
-        ///inline ROW.DELETE // F
+        ///inline ROW.DELETE // FV
         ///{
         ///	MOVEF_16 :0 newArray1d
         ///	ARRAY DELETE newArray1d
@@ -803,7 +803,7 @@ namespace EV3BasicCompiler.Properties {
         ///{
         ///	MOVEF_16 :0 newArray1d
         ///	MOVEF_32 :1 newIndex1d
-        ///	ARRAY READ newArray1d newIndex1d : [остаток строки не уместился]&quot;;.
+        ///	ARRAY_READ newArray1d newIndex1d  [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string Row {
             get {
@@ -1006,6 +1006,37 @@ namespace EV3BasicCompiler.Properties {
         internal static string Thread {
             get {
                 return ResourceManager.GetString("Thread", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: TIME -------------------------------------------------
+        ///DATA32 timeMC1
+        ///DATA32 timeMC2
+        ///DATA32 timeMC3
+        ///DATA32 timeMC4
+        ///DATA32 timeMC5
+        ///DATA32 timeMC6
+        ///DATA32 timeMC7
+        ///DATA32 timeMC8
+        ///DATA32 timeMC9
+        ///DATA32 timeMC10
+        ///MOVE32_32 0 timeMC1
+        ///MOVE32_32 0 timeMC2
+        ///MOVE32_32 0 timeMC3
+        ///MOVE32_32 0 timeMC4
+        ///MOVE32_32 0 timeMC5
+        ///MOVE32_32 0 timeMC6
+        ///MOVE32_32 0 timeMC7
+        ///MOVE32_32 0 timeMC8
+        ///MOVE32_32 0 timeMC9
+        ///MOVE32_32 0 timeMC10
+        ///DATA32 timeMC1tmp
+        ///DATA32  [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string Time {
+            get {
+                return ResourceManager.GetString("Time", resourceCulture);
             }
         }
         

@@ -29,3 +29,11 @@ C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Basic2\Documentation\obj\Debug\Doc
 C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Basic2\Documentation\obj\Debug\Documentation.csproj.GenerateResource.cache
 C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Basic2\Documentation\obj\Debug\Documentation.exe
 C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Basic2\Documentation\obj\Debug\Documentation.pdb
+C:\Users\Павлик\Documents\GitHub\EV3Basic2\Documentation\bin\Debug\Documentation.exe.config
+C:\Users\Павлик\Documents\GitHub\EV3Basic2\Documentation\bin\Debug\Documentation.exe
+C:\Users\Павлик\Documents\GitHub\EV3Basic2\Documentation\bin\Debug\Documentation.pdb
+C:\Users\Павлик\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.Properties.Resources.resources
+C:\Users\Павлик\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.csproj.GenerateResource.cache
+C:\Users\Павлик\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.csproj.CoreCompileInputs.cache
+C:\Users\Павлик\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.exe
+C:\Users\Павлик\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.pdb

@@ -54,7 +54,6 @@
     <Compile Include="F.cs" />
     <Compile Include="LCD.cs" />
     <Compile Include="EV3.cs" />
-    <Compile Include="Matrix.cs" />
     <Compile Include="Motor.cs" />
     <Compile Include="MotorA.cs" />
     <Compile Include="MotorAB.cs" />
@@ -78,6 +77,7 @@
     <Compile Include="Mailbox.cs" />
     <Compile Include="Speaker.cs" />
     <Compile Include="Thread.cs" />
+    <Compile Include="Time.cs" />
     <Compile Include="Vector.cs" />
   </ItemGroup>
   <ItemGroup>

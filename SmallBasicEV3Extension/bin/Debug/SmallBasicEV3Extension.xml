@@ -888,19 +888,6 @@
             In "brick mode", this command has no effect.
             </summary>
         </member>
-        <member name="T:SmallBasicEV3Extension.Matrix">
-            <summary>
-            Methods for working with 1 dimension arrays
-            </summary>
-        </member>
-        <member name="M:SmallBasicEV3Extension.Matrix.Init(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
-            <summary>
-            Creates a 1 dimensional array of the specified size and fills it with the specified values.
-            </summary>
-            <param name="size">Size array</param>
-            <param name="value">Value to fill</param>
-            <returns>Created array</returns>
-        </member>
         <member name="T:SmallBasicEV3Extension.Motor">
             <summary>
             Control the Motors connected to the EV3 Brick.
@@ -1894,19 +1881,6 @@
             <param name="index">Index of the value that should be picked from the result array (starting with index 0)</param>
             <returns>One element of a raw sensor reading</returns>
         </member>
-        <member name="M:SmallBasicEV3Extension.Sensor.FirstRawValue(Microsoft.SmallBasic.Library.Primitive)">
-            <summary>
-            Similar to ReadRawValue, but returns only a first raw value. Has a high data return rate.
-            </summary>
-            <param name="port">Number of the sensor port</param>
-            <returns>First element of a raw sensor reading</returns>
-        </member>
-        <member name="M:SmallBasicEV3Extension.Sensor.FirstRawValue2">
-            <summary>
-            Similar to ReadRawValue, but returns only a first raw value. Has a high data return rate.
-            </summary>
-            <returns>First element of a raw sensor reading</returns>
-        </member>
         <member name="M:SmallBasicEV3Extension.Sensor.CommunicateI2C(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
             <summary>
             Communicates with devices using the I2C protocol over one of the sensor ports.
@@ -2103,6 +2077,121 @@
             Releases a lock on a mutex. This function must only be called when there was indeed a preceding call to Lock. 
             </summary>
             <param name="mutex">The number of the mutex (as returned from CreateMutex() )</param>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Time">
+            <summary>
+            Methods for working with timer
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get1">
+            <summary>
+            The time in milliseconds. Timer number 1
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get2">
+            <summary>
+            The time in milliseconds. Timer number 2
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get3">
+            <summary>
+            The time in milliseconds. Timer number 3
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get4">
+            <summary>
+            The time in milliseconds. Timer number 4
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get5">
+            <summary>
+            The time in milliseconds. Timer number 5
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get6">
+            <summary>
+            The time in milliseconds. Timer number 6
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get7">
+            <summary>
+            The time in milliseconds. Timer number 7
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get8">
+            <summary>
+            The time in milliseconds. Timer number 8
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get9">
+            <summary>
+            The time in milliseconds. Timer number 9
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Get10">
+            <summary>
+            The time in milliseconds. Timer number 10
+            </summary>
+            <returns>Milliseconds</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset1">
+            <summary>
+            Reset timer number 1 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset2">
+            <summary>
+            Reset timer number 2 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset3">
+            <summary>
+            Reset timer number 3 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset4">
+            <summary>
+            Reset timer number 4 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset5">
+            <summary>
+            Reset timer number 5 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset6">
+            <summary>
+            Reset timer number 6 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset7">
+            <summary>
+            Reset timer number 7 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset8">
+            <summary>
+            Reset timer number 8 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset9">
+            <summary>
+            Reset timer number 9 to 0
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Time.Reset10">
+            <summary>
+            Reset timer number 10 to 0
+            </summary>
         </member>
         <member name="T:SmallBasicEV3Extension.Vector">
             <summary>

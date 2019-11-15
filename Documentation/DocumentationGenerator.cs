@@ -33,52 +33,52 @@ namespace Documentation
 
         static void Main(String[] args)
         {
-            generate("C:/Users/Дом/Desktop/EV3Basic2/SmallBasicEV3Extension/bin/Debug/SmallBasicEV3Extension.xml",
+            generate("C:/Users/Павлик/Documents/GitHub/EV3Basic2/SmallBasicEV3Extension/bin/Debug/SmallBasicEV3Extension.xml",
                      "C:/Program Files (x86)/Microsoft/Small Basic/SmallBasicLibrary.xml",
                      "EV3Basic Developer Manual",
                      Documentation.Properties.Resources.Manual,
                      Documentation.Properties.Resources.Appendix,
                      "Returns",
                      "Property",
-                     "C:/Users/Дом/Desktop/EV3Basic2/Documentation/ev3basic_manual.html"
+                     "C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/ev3basic_manual.html"
                      );
-        /*
-            generate("C:/Users/Reinhard/Documents/GitHub/EV3Basic/Documentation/SmallBasicEV3Extension.DE.xml",
+        
+            generate("C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/SmallBasicEV3Extension.DE.xml",
                      "C:/Program Files (x86)/Microsoft/Small Basic/SmallBasicLibrary.DE.xml",
                      "EV3Basic Benutzerhandbuch",
                      Documentation.Properties.Resources.ManualDE,
                      Documentation.Properties.Resources.Appendix,
                      "Gibt zurück",
                      "Eigenschaft",
-                     "C:/Users/Reinhard/Documents/GitHub/EV3Basic/Documentation/ev3basic_handbuch.html"
+                     "C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/ev3basic_handbuch.html"
                      );
-            generate("C:/Users/Reinhard/Documents/GitHub/EV3Basic/Documentation/SmallBasicEV3Extension.FR.xml",
+            generate("C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/SmallBasicEV3Extension.FR.xml",
                      "C:/Program Files (x86)/Microsoft/Small Basic/SmallBasicLibrary.FR.xml",
                      "EV3Basic Developer Manual",
                      Documentation.Properties.Resources.ManualFR,
                      Documentation.Properties.Resources.AppendixFR,
                      "Retourne",
                      "Propriété",
-                     "C:/Users/Reinhard/Documents/GitHub/EV3Basic/Documentation/ev3basic_manuel.html"
+                     "C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/ev3basic_manuel.html"
                      );
-            generate("C:/Users/Reinhard/Documents/GitHub/EV3Basic/Documentation/SmallBasicEV3Extension.ES.xml",
+            generate("C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/SmallBasicEV3Extension.ES.xml",
                      "C:/Program Files (x86)/Microsoft/Small Basic/SmallBasicLibrary.ES.xml",
                      "EV3Basic Developer Manual",
                      Documentation.Properties.Resources.ManualES,
                      Documentation.Properties.Resources.Appendix,
                      "Devuelve",
                      "Propiedad",
-                     "C:/Users/Reinhard/Documents/GitHub/EV3Basic/Documentation/ev3basic_manual_es.html"
+                     "C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/ev3basic_manual_es.html"
                      );
-*/
-            generate("C:/Users/Дом/Desktop/EV3Basic2/Documentation/SmallBasicEV3Extension.RU.xml",
+
+            generate("C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/SmallBasicEV3Extension.RU.xml",
                      "C:/Program Files (x86)/Microsoft/Small Basic/SmallBasicLibrary.RU.xml",
                      "EV3Basic Developer Manual",
                      Documentation.Properties.Resources.ManualRU,
                      Documentation.Properties.Resources.Appendix,
                      "Возвращает",
                      "Свойство",
-                     "C:/Users/Дом/Desktop/EV3Basic2/Documentation/ev3basic_manual_ru.html"
+                     "C:/Users/Павлик/Documents/GitHub/EV3Basic2/Documentation/ev3basic_manual_ru.html"
                      );
         }
 
