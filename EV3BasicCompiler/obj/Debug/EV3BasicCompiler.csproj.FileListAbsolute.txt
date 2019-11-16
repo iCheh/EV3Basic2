@@ -32,3 +32,10 @@ C:\Users\Павлик\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3B
 C:\Users\Павлик\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3BasicCompiler.csproj.CoreCompileInputs.cache
 C:\Users\Павлик\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3BasicCompiler.dll
 C:\Users\Павлик\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3BasicCompiler.pdb
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3BasicCompiler\bin\Debug\EV3BasicCompiler.dll
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3BasicCompiler\bin\Debug\EV3BasicCompiler.pdb
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3BasicCompiler.csprojAssemblyReference.cache
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3BasicCompiler.Properties.Resources.resources
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3BasicCompiler.csproj.GenerateResource.cache
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3BasicCompiler.dll
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3BasicCompiler\obj\Debug\EV3BasicCompiler.pdb
