@@ -124,8 +124,11 @@
     <Content Include="Resources\MotorCD.txt" />
     <Content Include="Resources\MotorD.txt" />
     <Content Include="Resources\Row.txt" />
-    <Content Include="Resources\Sens.txt" />
     <Content Include="Resources\MotorA.txt" />
+    <Content Include="Resources\Sensor1.txt" />
+    <Content Include="Resources\Sensor2.txt" />
+    <Content Include="Resources\Sensor3.txt" />
+    <Content Include="Resources\Sensor4.txt" />
     <Content Include="Resources\Time.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

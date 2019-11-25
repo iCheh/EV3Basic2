@@ -391,7 +391,7 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORA.RESETCOUNT // V
         ///{
-        ///	OUTPUT_CLR_COUNT 0 0
+        ///	OUTPUT_CLR_COUNT 0 1
         ///}
         ///
         ///inline MOTORA.SETDIRECTPOLARITY // V
@@ -407,9 +407,6 @@ namespace EV3BasicCompiler.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: MOTORAB ----------------------------------------------
         ///
-        ///DATA8 setSpeedAB
-        ///DATA8 setPowerAB
-        ///
         ///inline MOTORAB.OFF // V
         ///{
         ///	OUTPUT_POWER 0 3 0
@@ -424,16 +421,18 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORAB.SETSPEED    // FV
         ///{
-        ///	MOVEF_8 :0 setSpeedAB
-        ///	OUTPUT_SPEED 0 3 setSpeedAB
+        ///	MOVEF_8 :0 setSpeedA
+        ///	OUTPUT_SPEED 0 3 setSpeedA
         ///
         ///inline MOTORAB.SETPOWER   // FV
         ///{
-        ///	MOVEF_8 :0 setPowerAB
-        ///	OUTPUT_POWER 0 3 setPowerAB
+        ///	MOVEF_8 :0 setPowerA
+        ///	OUTPUT_POWER 0 3 setPowerA
         ///}
         ///
-        ///inline MOTORAB [остаток строки не уместился]&quot;;.
+        ///inline MOTORAB.STARTSPEED    // FV
+        ///{
+        ///	MOVEF_8 :0 setSp [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorAB {
             get {
@@ -443,9 +442,6 @@ namespace EV3BasicCompiler.Properties {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: MOTORAC ----------------------------------------------
-        ///
-        ///DATA8 setSpeedAC
-        ///DATA8 setPowerAC
         ///
         ///inline MOTORAC.OFF // V
         ///{
@@ -461,16 +457,18 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORAC.SETSPEED    // FV
         ///{
-        ///	MOVEF_8 :0 setSpeedAC
-        ///	OUTPUT_SPEED 0 5 setSpeedAC
+        ///	MOVEF_8 :0 setSpeedA
+        ///	OUTPUT_SPEED 0 5 setSpeedA
         ///
         ///inline MOTORAC.SETPOWER   // FV
         ///{
-        ///	MOVEF_8 :0 setPowerAC
-        ///	OUTPUT_POWER 0 5 setPowerAC
+        ///	MOVEF_8 :0 setPowerA
+        ///	OUTPUT_POWER 0 5 setPowerA
         ///}
         ///
-        ///inline MOTORAC [остаток строки не уместился]&quot;;.
+        ///inline MOTORAC.STARTSPEED    // FV
+        ///{
+        ///	MOVEF_8 :0 setSp [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorAC {
             get {
@@ -480,9 +478,6 @@ namespace EV3BasicCompiler.Properties {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: MOTORAD ----------------------------------------------
-        ///
-        ///DATA8 setSpeedAD
-        ///DATA8 setPowerAD
         ///
         ///inline MOTORAD.OFF // V
         ///{
@@ -498,16 +493,18 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORAD.SETSPEED    // FV
         ///{
-        ///	MOVEF_8 :0 setSpeedAD
-        ///	OUTPUT_SPEED 0 9 setSpeedAD
+        ///	MOVEF_8 :0 setSpeedA
+        ///	OUTPUT_SPEED 0 9 setSpeedA
         ///
         ///inline MOTORAD.SETPOWER   // FV
         ///{
-        ///	MOVEF_8 :0 setPowerAD
-        ///	OUTPUT_POWER 0 9 setPowerAD
+        ///	MOVEF_8 :0 setPowerA
+        ///	OUTPUT_POWER 0 9 setPowerA
         ///}
         ///
-        ///inline MOTORAD [остаток строки не уместился]&quot;;.
+        ///inline MOTORAD.STARTSPEED    // FV
+        ///{
+        ///	MOVEF_8 :0 setSp [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorAD {
             get {
@@ -538,7 +535,7 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORB.RESETCOUNT // V
         ///{
-        ///	OUTPUT_CLR_COUNT 0 1
+        ///	OUTPUT_CLR_COUNT 0 2
         ///}
         ///
         ///inline MOTORB.SETDIRECTPOLARITY // V
@@ -554,9 +551,6 @@ namespace EV3BasicCompiler.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: MOTORBC ----------------------------------------------
         ///
-        ///DATA8 setSpeedBC
-        ///DATA8 setPowerBC
-        ///
         ///inline MOTORBC.OFF // V
         ///{
         ///	OUTPUT_POWER 0 6 0
@@ -571,16 +565,18 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORBC.SETSPEED    // FV
         ///{
-        ///	MOVEF_8 :0 setSpeedBC
-        ///	OUTPUT_SPEED 0 6 setSpeedBC
+        ///	MOVEF_8 :0 setSpeedB
+        ///	OUTPUT_SPEED 0 6 setSpeedB
         ///
         ///inline MOTORBC.SETPOWER   // FV
         ///{
-        ///	MOVEF_8 :0 setPowerBC
-        ///	OUTPUT_POWER 0 6 setPowerBC
+        ///	MOVEF_8 :0 setPowerB
+        ///	OUTPUT_POWER 0 6 setPowerB
         ///}
         ///
-        ///inline MOTORBC [остаток строки не уместился]&quot;;.
+        ///inline MOTORBC.STARTSPEED    // FV
+        ///{
+        ///	MOVEF_8 :0 setSp [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorBC {
             get {
@@ -590,9 +586,6 @@ namespace EV3BasicCompiler.Properties {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: MOTORBD ----------------------------------------------
-        ///
-        ///DATA8 setSpeedBD
-        ///DATA8 setPowerBD
         ///
         ///inline MOTORBD.OFF // V
         ///{
@@ -608,16 +601,18 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORBD.SETSPEED    // FV
         ///{
-        ///	MOVEF_8 :0 setSpeedBD
-        ///	OUTPUT_SPEED 0 10 setSpeedBD
+        ///	MOVEF_8 :0 setSpeedB
+        ///	OUTPUT_SPEED 0 10 setSpeedB
         ///
         ///inline MOTORBD.SETPOWER   // FV
         ///{
-        ///	MOVEF_8 :0 setPowerBD
-        ///	OUTPUT_POWER 0 10 setPowerBD
+        ///	MOVEF_8 :0 setPowerB
+        ///	OUTPUT_POWER 0 10 setPowerB
         ///}
         ///
-        ///inline M [остаток строки не уместился]&quot;;.
+        ///inline MOTORBD.STARTSPEED    // FV
+        ///{
+        ///	MOVEF_8 :0 [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorBD {
             get {
@@ -648,7 +643,7 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORC.RESETCOUNT // V
         ///{
-        ///	OUTPUT_CLR_COUNT 0 2
+        ///	OUTPUT_CLR_COUNT 0 4
         ///}
         ///
         ///inline MOTORC.SETDIRECTPOLARITY // V
@@ -664,9 +659,6 @@ namespace EV3BasicCompiler.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: MOTORCD ----------------------------------------------
         ///
-        ///DATA8 setSpeedCD
-        ///DATA8 setPowerCD
-        ///
         ///inline MOTORCD.OFF // V
         ///{
         ///	OUTPUT_POWER 0 10 0
@@ -681,16 +673,18 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORCD.SETSPEED    // FV
         ///{
-        ///	MOVEF_8 :0 setSpeedCD
-        ///	OUTPUT_SPEED 0 12 setSpeedCD
+        ///	MOVEF_8 :0 setSpeedC
+        ///	OUTPUT_SPEED 0 12 setSpeedC
         ///
         ///inline MOTORCD.SETPOWER   // FV
         ///{
-        ///	MOVEF_8 :0 setPowerCD
-        ///	OUTPUT_POWER 0 12 setPowerCD
+        ///	MOVEF_8 :0 setPowerC
+        ///	OUTPUT_POWER 0 12 setPowerC
         ///}
         ///
-        ///inline M [остаток строки не уместился]&quot;;.
+        ///inline MOTORCD.STARTSPEED    // FV
+        ///{
+        ///	MOVEF_8 :0 [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string MotorCD {
             get {
@@ -721,7 +715,7 @@ namespace EV3BasicCompiler.Properties {
         ///
         ///inline MOTORD.RESETCOUNT // V
         ///{
-        ///	OUTPUT_CLR_COUNT 0 3
+        ///	OUTPUT_CLR_COUNT 0 8
         ///}
         ///
         ///inline MOTORD.SETDIRECTPOLARITY // V
@@ -839,41 +833,6 @@ namespace EV3BasicCompiler.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: SENS ----------------------------------------------
-        ///
-        ///inline SENS.RAW1    // F
-        ///{
-        ///	DATA32 out1:#
-        ///	INPUT_READEXT 0 0 0 -1 18 1 out1:#
-        ///	MOVE32_F out1:# :0
-        ///}
-        ///
-        ///inline SENS.RAW2    // F
-        ///{
-        ///	DATA32 out2:#
-        ///	INPUT_READEXT 0 1 0 -1 18 1 out2:#
-        ///	MOVE32_F out2:# :0
-        ///}
-        ///
-        ///inline SENS.RAW3    // F
-        ///{
-        ///	DATA32 out3:#
-        ///	INPUT_READEXT 0 2 0 -1 18 1 out3:#
-        ///	MOVE32_F out3:# :0
-        ///}
-        ///
-        ///inline SENS.RAW4    // F
-        ///{
-        ///	DATA32 out4:#
-        ///	INPUT_READEXT 0 3 0 -1 18 1 o [остаток строки не уместился]&quot;;.
-        /// </summary>
-        internal static string Sens {
-            get {
-                return ResourceManager.GetString("Sens", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на // -------------------------------------------------- EV3 MODULE: SENSOR -----------------------------------
         ///
         ///init
@@ -911,6 +870,142 @@ namespace EV3BasicCompiler.Properties {
         internal static string Sensor {
             get {
                 return ResourceManager.GetString("Sensor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: SENSOR1 ----------------------------------------------
+        ///
+        ///DATA32 s1out1
+        ///DATA32 s1out2
+        ///DATA32 s1out3
+        ///
+        ///init
+        ///{
+        ///	MOVE32_32 0 s1out1
+        ///	MOVE32_32 0 s1out2
+        ///	MOVE32_32 0 s1out3
+        ///}
+        ///
+        ///inline SENSOR1.RAW1    // F
+        ///{
+        ///	INPUT_READEXT 0 0 0 -1 18 1 s1out1
+        ///	MOVE32_F s1out1 :0
+        ///}
+        ///
+        ///inline SENSOR1.RAW3    // FFFV
+        ///{
+        ///	INPUT_READEXT 0 0 0 -1 18 3 s1out1 s1out2 s1out3
+        ///	MOVE32_F s1out1 :0
+        ///	MOVE32_F s1out2 :1
+        ///	MOVE32_F s1out3 :2
+        ///}.
+        /// </summary>
+        internal static string Sensor1 {
+            get {
+                return ResourceManager.GetString("Sensor1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: SENSOR2 ----------------------------------------------
+        ///
+        ///DATA32 s2out1
+        ///DATA32 s2out2
+        ///DATA32 s2out3
+        ///
+        ///init
+        ///{
+        ///	MOVE32_32 0 s2out1
+        ///	MOVE32_32 0 s2out2
+        ///	MOVE32_32 0 s2out3
+        ///}
+        ///
+        ///inline SENSOR2.RAW1    // F
+        ///{
+        ///	INPUT_READEXT 0 0 0 -1 18 1 s2out1
+        ///	MOVE32_F s2out1 :0
+        ///}
+        ///
+        ///inline SENSOR2.RAW3    // FFFV
+        ///{
+        ///	INPUT_READEXT 0 0 0 -1 18 3 s2out1 s2out2 s2out3
+        ///	MOVE32_F s2out1 :0
+        ///	MOVE32_F s2out2 :1
+        ///	MOVE32_F s2out3 :2
+        ///}.
+        /// </summary>
+        internal static string Sensor2 {
+            get {
+                return ResourceManager.GetString("Sensor2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: SENSOR3 ----------------------------------------------
+        ///
+        ///DATA32 s3out1
+        ///DATA32 s3out2
+        ///DATA32 s3out3
+        ///
+        ///init
+        ///{
+        ///	MOVE32_32 0 s3out1
+        ///	MOVE32_32 0 s3out2
+        ///	MOVE32_32 0 s3out3
+        ///}
+        ///
+        ///inline SENSOR3.RAW1    // F
+        ///{
+        ///	INPUT_READEXT 0 0 0 -1 18 1 s3out1
+        ///	MOVE32_F s3out1 :0
+        ///}
+        ///
+        ///inline SENSOR3.RAW3    // FFFV
+        ///{
+        ///	INPUT_READEXT 0 0 0 -1 18 3 s3out1 s3out2 s3out3
+        ///	MOVE32_F s3out1 :0
+        ///	MOVE32_F s3out2 :1
+        ///	MOVE32_F s3out3 :2
+        ///}.
+        /// </summary>
+        internal static string Sensor3 {
+            get {
+                return ResourceManager.GetString("Sensor3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на // ------------------------------------------ EV3 MODULE: SENSOR1 ----------------------------------------------
+        ///
+        ///DATA32 s4out1
+        ///DATA32 s4out2
+        ///DATA32 s4out3
+        ///
+        ///init
+        ///{
+        ///	MOVE32_32 0 s4out1
+        ///	MOVE32_32 0 s4out2
+        ///	MOVE32_32 0 s4out3
+        ///}
+        ///
+        ///inline SENSOR4.RAW1    // F
+        ///{
+        ///	INPUT_READEXT 0 0 0 -1 18 1 s4out1
+        ///	MOVE32_F s4out1 :0
+        ///}
+        ///
+        ///inline SENSOR4.RAW3    // FFFV
+        ///{
+        ///	INPUT_READEXT 0 0 0 -1 18 3 s4out1 s4out2 s4out3
+        ///	MOVE32_F s4out1 :0
+        ///	MOVE32_F s4out2 :1
+        ///	MOVE32_F s4out3 :2
+        ///}.
+        /// </summary>
+        internal static string Sensor4 {
+            get {
+                return ResourceManager.GetString("Sensor4", resourceCulture);
             }
         }
         
@@ -1021,18 +1116,21 @@ namespace EV3BasicCompiler.Properties {
         ///DATA32 timeMC8
         ///DATA32 timeMC9
         ///DATA32 timeMC10
-        ///MOVE32_32 0 timeMC1
-        ///MOVE32_32 0 timeMC2
-        ///MOVE32_32 0 timeMC3
-        ///MOVE32_32 0 timeMC4
-        ///MOVE32_32 0 timeMC5
-        ///MOVE32_32 0 timeMC6
-        ///MOVE32_32 0 timeMC7
-        ///MOVE32_32 0 timeMC8
-        ///MOVE32_32 0 timeMC9
-        ///MOVE32_32 0 timeMC10
         ///DATA32 timeMC1tmp
-        ///DATA32  [остаток строки не уместился]&quot;;.
+        ///DATA32 timeMC2tmp
+        ///DATA32 timeMC3tmp
+        ///DATA32 timeMC4tmp
+        ///DATA32 timeMC5tmp
+        ///DATA32 timeMC6tmp
+        ///DATA32 timeMC7tmp
+        ///DATA32 timeMC8tmp
+        ///DATA32 timeMC9tmp
+        ///DATA32 timeMC10tmp
+        ///
+        ///init
+        ///{
+        ///	MOVE32_32 0 timeMC1
+        ///	MOVE32_32 0  [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string Time {
             get {

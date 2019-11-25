@@ -1,8 +1,5 @@
 ﻿// ------------------------------------------ EV3 MODULE: MOTORAC ----------------------------------------------
 
-DATA8 setSpeedAC
-DATA8 setPowerAC
-
 inline MOTORAC.OFF // V
 {
 	OUTPUT_POWER 0 5 0
@@ -17,26 +14,26 @@ inline MOTORAC.OFFANDBRAKE // V
 
 inline MOTORAC.SETSPEED    // FV
 {
-	MOVEF_8 :0 setSpeedAC
-	OUTPUT_SPEED 0 5 setSpeedAC
+	MOVEF_8 :0 setSpeedA
+	OUTPUT_SPEED 0 5 setSpeedA
 
 inline MOTORAC.SETPOWER   // FV
 {
-	MOVEF_8 :0 setPowerAC
-	OUTPUT_POWER 0 5 setPowerAC
+	MOVEF_8 :0 setPowerA
+	OUTPUT_POWER 0 5 setPowerA
 }
 
 inline MOTORAC.STARTSPEED    // FV
 {
-	MOVEF_8 :0 setSpeedAC
-	OUTPUT_SPEED 0 5 setSpeedAC
+	MOVEF_8 :0 setSpeedA
+	OUTPUT_SPEED 0 5 setSpeedA
 	OUTPUT_START 0 5
 }
 
 inline MOTORAC.STARTPOWER   // FV
 {
-	MOVEF_8 :0 setPowerAC
-	OUTPUT_POWER 0 5 setPowerAC
+	MOVEF_8 :0 setPowerA
+	OUTPUT_POWER 0 5 setPowerA
 	OUTPUT_START 0 5
 }
 

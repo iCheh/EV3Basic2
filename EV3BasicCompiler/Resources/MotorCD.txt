@@ -1,8 +1,5 @@
 ﻿// ------------------------------------------ EV3 MODULE: MOTORCD ----------------------------------------------
 
-DATA8 setSpeedCD
-DATA8 setPowerCD
-
 inline MOTORCD.OFF // V
 {
 	OUTPUT_POWER 0 10 0
@@ -17,26 +14,26 @@ inline MOTORCD.OFFANDBRAKE // V
 
 inline MOTORCD.SETSPEED    // FV
 {
-	MOVEF_8 :0 setSpeedCD
-	OUTPUT_SPEED 0 12 setSpeedCD
+	MOVEF_8 :0 setSpeedC
+	OUTPUT_SPEED 0 12 setSpeedC
 
 inline MOTORCD.SETPOWER   // FV
 {
-	MOVEF_8 :0 setPowerCD
-	OUTPUT_POWER 0 12 setPowerCD
+	MOVEF_8 :0 setPowerC
+	OUTPUT_POWER 0 12 setPowerC
 }
 
 inline MOTORCD.STARTSPEED    // FV
 {
-	MOVEF_8 :0 setSpeedCD
-	OUTPUT_SPEED 0 12 setSpeedCD
+	MOVEF_8 :0 setSpeedC
+	OUTPUT_SPEED 0 12 setSpeedC
 	OUTPUT_START 0 12
 }
 
 inline MOTORCD.STARTPOWER   // FV
 {
-	MOVEF_8 :0 setPowerCD
-	OUTPUT_POWER 0 12 setPowerCD
+	MOVEF_8 :0 setPowerC
+	OUTPUT_POWER 0 12 setPowerC
 	OUTPUT_START 0 12
 }
 

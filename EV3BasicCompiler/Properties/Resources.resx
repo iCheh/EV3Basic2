@@ -169,9 +169,6 @@
   <data name="Byte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Byte.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Sens" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sens.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="MotorA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MotorA.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -210,5 +207,17 @@
   </data>
   <data name="Time" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Time.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Sensor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sensor1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Sensor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sensor2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Sensor3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sensor3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Sensor4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sensor4.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

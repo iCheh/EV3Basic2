@@ -86,14 +86,6 @@ namespace SmallBasicEV3Extension
         {
             return new Primitive(0);
         }
-        /// <summary>
-        /// The time in milliseconds. Timer number 10
-        /// </summary>
-        /// <returns>Milliseconds</returns>
-        public static Primitive Get10()
-        {
-            return new Primitive(0);
-        }
 
         /// <summary>
         /// Reset timer number 1 to 0
@@ -147,12 +139,6 @@ namespace SmallBasicEV3Extension
         /// Reset timer number 9 to 0
         /// </summary>
         public static void Reset9()
-        {
-        }
-        /// <summary>
-        /// Reset timer number 10 to 0
-        /// </summary>
-        public static void Reset10()
         {
         }
     }

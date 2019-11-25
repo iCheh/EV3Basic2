@@ -8,7 +8,6 @@ DATA32 timeMC6
 DATA32 timeMC7
 DATA32 timeMC8
 DATA32 timeMC9
-DATA32 timeMC10
 DATA32 timeMC1tmp
 DATA32 timeMC2tmp
 DATA32 timeMC3tmp
@@ -18,7 +17,6 @@ DATA32 timeMC6tmp
 DATA32 timeMC7tmp
 DATA32 timeMC8tmp
 DATA32 timeMC9tmp
-DATA32 timeMC10tmp
 
 init
 {
@@ -31,7 +29,6 @@ init
 	MOVE32_32 0 timeMC7
 	MOVE32_32 0 timeMC8
 	MOVE32_32 0 timeMC9
-	MOVE32_32 0 timeMC10
 }
 
 inline TIME.GET1 // F
@@ -97,13 +94,6 @@ inline TIME.GET9 // F
 	MOVE32_F timeMC9tmp :0
 }
 
-inline TIME.GET10 // F
-{
-	TIMER_READ timeMC10tmp
-	SUB32 timeMC10tmp timeMC10 timeMC10tmp
-	MOVE32_F timeMC10tmp :0
-}
-
 inline TIME.RESET1 // V
 {
 	TIMER_READ timeMC1
@@ -147,9 +137,4 @@ inline TIME.RESET8 // V
 inline TIME.RESET9 // V
 {
 	TIMER_READ timeMC9
-}
-
-inline TIME.RESET10 // V
-{
-	TIMER_READ timeMC10
 }

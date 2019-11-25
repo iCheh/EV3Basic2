@@ -1771,36 +1771,26 @@
             <param name="array">Array</param>
             <param name="size">New size array</param>
         </member>
-        <member name="T:SmallBasicEV3Extension.Sens">
+        <member name="T:SmallBasicEV3Extension.Sensor1">
             <summary>
             Access sensors that are attached to the brick.
             To specify the sensor use the port number which is printed below the socket on the brick (for example 1).
             To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).
             </summary>
         </member>
-        <member name="M:SmallBasicEV3Extension.Sens.Raw1">
+        <member name="M:SmallBasicEV3Extension.Sensor1.Raw1">
             <summary>
             Similar to ReadRawValue, but returns only a first raw value for port 1. Has a high data return rate.
             </summary>
             <returns>First element of a raw sensor reading</returns>
         </member>
-        <member name="M:SmallBasicEV3Extension.Sens.Raw2">
+        <member name="M:SmallBasicEV3Extension.Sensor1.Raw3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
             <summary>
-            Similar to ReadRawValue, but returns only a first raw value for port 2. Has a high data return rate.
+            Gets three raw values for port 1
             </summary>
-            <returns>First element of a raw sensor reading</returns>
-        </member>
-        <member name="M:SmallBasicEV3Extension.Sens.Raw3">
-            <summary>
-            Similar to ReadRawValue, but returns only a first raw value for port 3. Has a high data return rate.
-            </summary>
-            <returns>First element of a raw sensor reading</returns>
-        </member>
-        <member name="M:SmallBasicEV3Extension.Sens.Raw4">
-            <summary>
-            Similar to ReadRawValue, but returns only a first raw value for port 4. Has a high data return rate.
-            </summary>
-            <returns>First element of a raw sensor reading</returns>
+            <param name="var1">The variable in which the first value will be written.</param>
+            <param name="var2">The variable in which the second value will be written.</param>
+            <param name="var3">The variable in which the third value will be written.</param>
         </member>
         <member name="T:SmallBasicEV3Extension.Sensor">
             <summary>
@@ -1991,6 +1981,69 @@
             </summary>
             <param name="brickname">Name of the remote brick.</param>
         </member>
+        <member name="T:SmallBasicEV3Extension.Sensor2">
+            <summary>
+            Access sensors that are attached to the brick.
+            To specify the sensor use the port number which is printed below the socket on the brick (for example 1).
+            To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor2.Raw1">
+            <summary>
+            Similar to ReadRawValue, but returns only a first raw value for port 2. Has a high data return rate.
+            </summary>
+            <returns>First element of a raw sensor reading</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor2.Raw3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Gets three raw values for port 2
+            </summary>
+            <param name="var1">The variable in which the first value will be written.</param>
+            <param name="var2">The variable in which the second value will be written.</param>
+            <param name="var3">The variable in which the third value will be written.</param>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Sensor3">
+            <summary>
+            Access sensors that are attached to the brick.
+            To specify the sensor use the port number which is printed below the socket on the brick (for example 1).
+            To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor3.Raw1">
+            <summary>
+            Similar to ReadRawValue, but returns only a first raw value for port 3. Has a high data return rate.
+            </summary>
+            <returns>First element of a raw sensor reading</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor3.Raw3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Gets three raw values for port 3
+            </summary>
+            <param name="var1">The variable in which the first value will be written.</param>
+            <param name="var2">The variable in which the second value will be written.</param>
+            <param name="var3">The variable in which the third value will be written.</param>
+        </member>
+        <member name="T:SmallBasicEV3Extension.Sensor4">
+            <summary>
+            Access sensors that are attached to the brick.
+            To specify the sensor use the port number which is printed below the socket on the brick (for example 1).
+            To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).
+            </summary>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor4.Raw1">
+            <summary>
+            Similar to ReadRawValue, but returns only a first raw value for port 4. Has a high data return rate.
+            </summary>
+            <returns>First element of a raw sensor reading</returns>
+        </member>
+        <member name="M:SmallBasicEV3Extension.Sensor4.Raw3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+            <summary>
+            Gets three raw values for port 4
+            </summary>
+            <param name="var1">The variable in which the first value will be written.</param>
+            <param name="var2">The variable in which the second value will be written.</param>
+            <param name="var3">The variable in which the third value will be written.</param>
+        </member>
         <member name="T:SmallBasicEV3Extension.Speaker">
             <summary>
             Use the brick's built-in speaker to play tones or sound files.
@@ -2137,12 +2190,6 @@
             </summary>
             <returns>Milliseconds</returns>
         </member>
-        <member name="M:SmallBasicEV3Extension.Time.Get10">
-            <summary>
-            The time in milliseconds. Timer number 10
-            </summary>
-            <returns>Milliseconds</returns>
-        </member>
         <member name="M:SmallBasicEV3Extension.Time.Reset1">
             <summary>
             Reset timer number 1 to 0
@@ -2186,11 +2233,6 @@
         <member name="M:SmallBasicEV3Extension.Time.Reset9">
             <summary>
             Reset timer number 9 to 0
-            </summary>
-        </member>
-        <member name="M:SmallBasicEV3Extension.Time.Reset10">
-            <summary>
-            Reset timer number 10 to 0
             </summary>
         </member>
         <member name="T:SmallBasicEV3Extension.Vector">

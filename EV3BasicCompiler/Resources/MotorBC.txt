@@ -1,8 +1,5 @@
 ﻿// ------------------------------------------ EV3 MODULE: MOTORBC ----------------------------------------------
 
-DATA8 setSpeedBC
-DATA8 setPowerBC
-
 inline MOTORBC.OFF // V
 {
 	OUTPUT_POWER 0 6 0
@@ -17,26 +14,26 @@ inline MOTORBC.OFFANDBRAKE // V
 
 inline MOTORBC.SETSPEED    // FV
 {
-	MOVEF_8 :0 setSpeedBC
-	OUTPUT_SPEED 0 6 setSpeedBC
+	MOVEF_8 :0 setSpeedB
+	OUTPUT_SPEED 0 6 setSpeedB
 
 inline MOTORBC.SETPOWER   // FV
 {
-	MOVEF_8 :0 setPowerBC
-	OUTPUT_POWER 0 6 setPowerBC
+	MOVEF_8 :0 setPowerB
+	OUTPUT_POWER 0 6 setPowerB
 }
 
 inline MOTORBC.STARTSPEED    // FV
 {
-	MOVEF_8 :0 setSpeedBC
-	OUTPUT_SPEED 0 6 setSpeedBC
+	MOVEF_8 :0 setSpeedB
+	OUTPUT_SPEED 0 6 setSpeedB
 	OUTPUT_START 0 6
 }
 
 inline MOTORBC.STARTPOWER   // FV
 {
-	MOVEF_8 :0 setPowerBC
-	OUTPUT_POWER 0 6 setPowerBC
+	MOVEF_8 :0 setPowerB
+	OUTPUT_POWER 0 6 setPowerB
 	OUTPUT_START 0 6
 }
 

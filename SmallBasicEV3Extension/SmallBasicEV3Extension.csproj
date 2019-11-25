@@ -72,9 +72,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Row.cs" />
-    <Compile Include="Sens.cs" />
+    <Compile Include="Sensor1.cs" />
     <Compile Include="Sensor.cs" />
     <Compile Include="Mailbox.cs" />
+    <Compile Include="Sensor2.cs" />
+    <Compile Include="Sensor3.cs" />
+    <Compile Include="Sensor4.cs" />
     <Compile Include="Speaker.cs" />
     <Compile Include="Thread.cs" />
     <Compile Include="Time.cs" />

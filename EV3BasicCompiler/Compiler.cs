@@ -89,7 +89,10 @@ namespace EV3BasicCompiler
             readLibraryModule(EV3BasicCompiler.Properties.Resources.Text);
             readLibraryModule(EV3BasicCompiler.Properties.Resources.Thread);
             readLibraryModule(EV3BasicCompiler.Properties.Resources.Vector);
-            readLibraryModule(EV3BasicCompiler.Properties.Resources.Sens);
+            readLibraryModule(EV3BasicCompiler.Properties.Resources.Sensor1);
+            readLibraryModule(EV3BasicCompiler.Properties.Resources.Sensor2);
+            readLibraryModule(EV3BasicCompiler.Properties.Resources.Sensor3);
+            readLibraryModule(EV3BasicCompiler.Properties.Resources.Sensor4);
             readLibraryModule(EV3BasicCompiler.Properties.Resources.MotorA);
             readLibraryModule(EV3BasicCompiler.Properties.Resources.MotorB);
             readLibraryModule(EV3BasicCompiler.Properties.Resources.MotorC);

@@ -2124,125 +2124,197 @@
           Методы для работы с таймером
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get1()">
+      <member name="M:SmallBasicEV3Extension.Time.Get1">
         <summary>
           Получить показания таймера №1 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset1()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset1">
         <summary>
           Сбросить показания таймера №1 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get2()">
+      <member name="M:SmallBasicEV3Extension.Time.Get2">
         <summary>
           Получить показания таймера №2 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset2()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset2">
         <summary>
           Сбросить показания таймера №2 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get3()">
+      <member name="M:SmallBasicEV3Extension.Time.Get3">
         <summary>
           Получить показания таймера №3 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset3()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset3">
         <summary>
           Сбросить показания таймера №3 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get4()">
+      <member name="M:SmallBasicEV3Extension.Time.Get4">
         <summary>
           Получить показания таймера №4 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset4()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset4">
         <summary>
           Сбросить показания таймера №4 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get5()">
+      <member name="M:SmallBasicEV3Extension.Time.Get5">
         <summary>
           Получить показания таймера №5 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset5()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset5">
         <summary>
           Сбросить показания таймера №5 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get6()">
+      <member name="M:SmallBasicEV3Extension.Time.Get6">
         <summary>
           Получить показания таймера №6 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset6()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset6">
         <summary>
           Сбросить показания таймера №6 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get7()">
+      <member name="M:SmallBasicEV3Extension.Time.Get7">
         <summary>
           Получить показания таймера №7 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset7()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset7">
         <summary>
           Сбросить показания таймера №7 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get8()">
+      <member name="M:SmallBasicEV3Extension.Time.Get8">
         <summary>
           Получить показания таймера №8 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset8()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset8">
         <summary>
           Сбросить показания таймера №8 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get9()">
+      <member name="M:SmallBasicEV3Extension.Time.Get9">
         <summary>
           Получить показания таймера №9 в милисекундах. Время считается с момента последнего сброса таймера.
           Если сброс не производился, то время считается со старта программы.
         </summary>
         <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset9()">
+      <member name="M:SmallBasicEV3Extension.Time.Reset9">
         <summary>
           Сбросить показания таймера №9 в ноль.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Get10()">
+      <!-- -->
+      <!-- SENSOR1 -->
+      <member name="T:SmallBasicEV3Extension.Sensor1">
         <summary>
-          Получить показания таймера №10 в милисекундах. Время считается с момента последнего сброса таймера.
-          Если сброс не производился, то время считается со старта программы.
+          Набор быстрых методов для работы с сенсором подключенныи к порту 1
         </summary>
-        <returns>Время в милисекундах</returns>
       </member>
-      <member name="M:SmallBasicEV3Extension.Time.Reset10()">
+      <member name="M:SmallBasicEV3Extension.Sensor1.Raw1">
         <summary>
-          Сбросить показания таймера №10 в ноль.
+          Получает первое значение сенсора порт 1 в формате Raw.
         </summary>
+        <returns>Измеренное значение</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Sensor1.Raw3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Получает три первых значения сенсора порт 1 в формате Raw
+        </summary>
+        <param name="var1">Переменная в которую записывается первое значение</param>
+        <param name="var2">Переменная в которую записывается второе значение</param>
+        <param name="var3">Переменная в которую записывается третье значение</param>
+      </member>
+      <!-- -->
+      <!-- SENSOR2 -->
+      <member name="T:SmallBasicEV3Extension.Sensor2">
+        <summary>
+          Набор быстрых методов для работы с сенсором подключенныи к порту 2
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Sensor2.Raw1">
+        <summary>
+          Получает первое значение сенсора порт 2 в формате Raw.
+        </summary>
+        <returns>Измеренное значение</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Sensor2.Raw3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Получает три первых значения сенсора порт 2 в формате Raw
+        </summary>
+        <param name="var1">Переменная в которую записывается первое значение</param>
+        <param name="var2">Переменная в которую записывается второе значение</param>
+        <param name="var3">Переменная в которую записывается третье значение</param>
+      </member>
+      <!-- -->
+      <!-- SENSOR3 -->
+      <member name="T:SmallBasicEV3Extension.Sensor3">
+        <summary>
+          Набор быстрых методов для работы с сенсором подключенныи к порту 3
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Sensor3.Raw1">
+        <summary>
+          Получает первое значение сенсора порт 3 в формате Raw.
+        </summary>
+        <returns>Измеренное значение</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Sensor3.Raw3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Получает три первых значения сенсора порт 3 в формате Raw
+        </summary>
+        <param name="var1">Переменная в которую записывается первое значение</param>
+        <param name="var2">Переменная в которую записывается второе значение</param>
+        <param name="var3">Переменная в которую записывается третье значение</param>
+      </member>
+      <!-- -->
+      <!-- SENSOR4 -->
+      <member name="T:SmallBasicEV3Extension.Sensor4">
+        <summary>
+          Набор быстрых методов для работы с сенсором подключенныи к порту 4
+        </summary>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Sensor4.Raw1">
+        <summary>
+          Получает первое значение сенсора порт 4 в формате Raw.
+        </summary>
+        <returns>Измеренное значение</returns>
+      </member>
+      <member name="M:SmallBasicEV3Extension.Sensor4.Raw3(Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive,Microsoft.SmallBasic.Library.Primitive)">
+        <summary>
+          Получает три первых значения сенсора порт 4 в формате Raw
+        </summary>
+        <param name="var1">Переменная в которую записывается первое значение</param>
+        <param name="var2">Переменная в которую записывается второе значение</param>
+        <param name="var3">Переменная в которую записывается третье значение</param>
       </member>
       <!-- -->
     </members>
