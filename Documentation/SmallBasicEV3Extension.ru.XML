@@ -1625,7 +1625,7 @@
           Задать прямую полярность мотора порт C.
         </summary>
       </member>
-      <member name="M:SmallBasicEV3Extension.MotorA.SetReversPolarity">
+      <member name="M:SmallBasicEV3Extension.MotorC.SetReversPolarity">
         <summary>
           Задать обратную полярность мотора порт C.
         </summary>

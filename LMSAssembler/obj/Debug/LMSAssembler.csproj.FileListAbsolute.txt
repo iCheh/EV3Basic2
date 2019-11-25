@@ -38,3 +38,4 @@ C:\Users\Дом\Documents\GitHub\EV3Basic2\LMSAssembler\obj\Debug\LMSAssembler.P
 C:\Users\Дом\Documents\GitHub\EV3Basic2\LMSAssembler\obj\Debug\LMSAssembler.csproj.GenerateResource.cache
 C:\Users\Дом\Documents\GitHub\EV3Basic2\LMSAssembler\obj\Debug\LMSAssembler.dll
 C:\Users\Дом\Documents\GitHub\EV3Basic2\LMSAssembler\obj\Debug\LMSAssembler.pdb
+C:\Users\Дом\Documents\GitHub\EV3Basic2\LMSAssembler\obj\Debug\LMSAssembler.csprojAssemblyReference.cache

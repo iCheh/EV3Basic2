@@ -44,3 +44,4 @@ C:\Users\Дом\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation
 C:\Users\Дом\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.csproj.GenerateResource.cache
 C:\Users\Дом\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.exe
 C:\Users\Дом\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.pdb
+C:\Users\Дом\Documents\GitHub\EV3Basic2\Documentation\obj\Debug\Documentation.csprojAssemblyReference.cache
