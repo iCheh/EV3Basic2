@@ -132,3 +132,6 @@ C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Explorer\obj\Debug\EV3Explorer.csp
 C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Explorer\obj\Debug\EV3Explorer.csproj.CopyComplete
 C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Explorer\obj\Debug\EV3Explorer.exe
 C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Explorer\obj\Debug\EV3Explorer.pdb
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Explorer\bin\Debug\EV3BasicPreprocessor.dll
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Explorer\bin\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\Documents\GitHub\EV3Basic2\EV3Explorer\bin\Debug\EV3BasicPreprocessor.dll.config

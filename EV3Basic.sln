@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMSAssembler", "LMSAssembler\LMSAssembler.csproj", "{DB6E87AD-6CB4-401A-925B-7E40F7CBF042}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EV3Explorer", "EV3Explorer\EV3Explorer.csproj", "{3DAB387B-F044-4BEA-9511-EE6C71164830}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B2FF73F2-F590-451D-9577-D2EF83604B3F} = {B2FF73F2-F590-451D-9577-D2EF83604B3F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EV3Communication", "EV3Communication\EV3Communication.csproj", "{C3C8582B-F715-41F9-A565-14C6918A0105}"
 EndProject
@@ -16,6 +19,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation", "Documentation\Documentation.csproj", "{A2EE623F-44B6-4853-B3EB-27836A918F5D}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EV3BasicInstaller", "EV3BasicInstaller\EV3BasicInstaller.vdproj", "{77F4EC78-B79A-42C6-ABDE-15C1AE2D48B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EV3BasicPreprocessor", "..\..\..\Desktop\EV3Basic2\EV3BasicPreprocessor\EV3BasicPreprocessor.csproj", "{B2FF73F2-F590-451D-9577-D2EF83604B3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +56,10 @@ Global
 		{77F4EC78-B79A-42C6-ABDE-15C1AE2D48B1}.Debug|Any CPU.Build.0 = Debug
 		{77F4EC78-B79A-42C6-ABDE-15C1AE2D48B1}.Release|Any CPU.ActiveCfg = Release
 		{77F4EC78-B79A-42C6-ABDE-15C1AE2D48B1}.Release|Any CPU.Build.0 = Release
+		{B2FF73F2-F590-451D-9577-D2EF83604B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2FF73F2-F590-451D-9577-D2EF83604B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2FF73F2-F590-451D-9577-D2EF83604B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2FF73F2-F590-451D-9577-D2EF83604B3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

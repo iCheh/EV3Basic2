@@ -105,6 +105,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Desktop\EV3Basic2\EV3BasicPreprocessor\EV3BasicPreprocessor.csproj">
+      <Project>{B2FF73F2-F590-451D-9577-D2EF83604B3F}</Project>
+      <Name>EV3BasicPreprocessor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EV3BasicCompiler\EV3BasicCompiler.csproj">
       <Project>{41e8f7a9-d228-4323-bd0d-f479ef81072c}</Project>
       <Name>EV3BasicCompiler</Name>

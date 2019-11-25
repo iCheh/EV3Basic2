@@ -1513,24 +1513,6 @@ When developing programs that only need to run on the PC, you can also use every
 <P class="parametersummary">Index</P>
 <H4 class="parameter">value</H4>
 <P class="parametersummary">Value</P>
-<H2 class="object">Sens</H2>
-<P class="objectsummary">Access sensors that are attached to the brick.<BR>To specify the sensor use the port number which is printed below the socket on the brick (for example 1).<BR>To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).</P>
-<H3 class="operation">Sens.Raw1 ()</H3>
-<P class="operationsummary">Similar to ReadRawValue, but returns only a first raw value for port 1. Has a high data return rate.</P>
-<H4 class="returns">Returns</H4>
-<P class="returnssummary">First element of a raw sensor reading</P>
-<H3 class="operation">Sens.Raw2 ()</H3>
-<P class="operationsummary">Similar to ReadRawValue, but returns only a first raw value for port 2. Has a high data return rate.</P>
-<H4 class="returns">Returns</H4>
-<P class="returnssummary">First element of a raw sensor reading</P>
-<H3 class="operation">Sens.Raw3 ()</H3>
-<P class="operationsummary">Similar to ReadRawValue, but returns only a first raw value for port 3. Has a high data return rate.</P>
-<H4 class="returns">Returns</H4>
-<P class="returnssummary">First element of a raw sensor reading</P>
-<H3 class="operation">Sens.Raw4 ()</H3>
-<P class="operationsummary">Similar to ReadRawValue, but returns only a first raw value for port 4. Has a high data return rate.</P>
-<H4 class="returns">Returns</H4>
-<P class="returnssummary">First element of a raw sensor reading</P>
 <H2 class="object">Sensor</H2>
 <P class="objectsummary">Access sensors that are attached to the brick.<BR>To specify the sensor use the port number which is printed below the socket on the brick (for example 1).<BR>To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).</P>
 <H3 class="operation">Sensor.CommunicateI2C (port, address, writebytes, readbytes, writedata)</H3>
@@ -1655,6 +1637,62 @@ When developing programs that only need to run on the PC, you can also use every
 <P class="parametersummary">How many bytes to write into the registers (maximum 30)</P>
 <H4 class="parameter">writedata</H4>
 <P class="parametersummary">Array holding the data bytes to be written (starting at 0)</P>
+<H2 class="object">Sensor1</H2>
+<P class="objectsummary">Access sensors that are attached to the brick.<BR>To specify the sensor use the port number which is printed below the socket on the brick (for example 1).<BR>To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).</P>
+<H3 class="operation">Sensor1.Raw1 ()</H3>
+<P class="operationsummary">Similar to ReadRawValue, but returns only a first raw value for port 1. Has a high data return rate.</P>
+<H4 class="returns">Returns</H4>
+<P class="returnssummary">First element of a raw sensor reading</P>
+<H3 class="operation">Sensor1.Raw3 (var1, var2, var3)</H3>
+<P class="operationsummary">Gets three raw values for port 1</P>
+<H4 class="parameter">var1</H4>
+<P class="parametersummary">The variable in which the first value will be written.</P>
+<H4 class="parameter">var2</H4>
+<P class="parametersummary">The variable in which the second value will be written.</P>
+<H4 class="parameter">var3</H4>
+<P class="parametersummary">The variable in which the third value will be written.</P>
+<H2 class="object">Sensor2</H2>
+<P class="objectsummary">Access sensors that are attached to the brick.<BR>To specify the sensor use the port number which is printed below the socket on the brick (for example 1).<BR>To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).</P>
+<H3 class="operation">Sensor2.Raw1 ()</H3>
+<P class="operationsummary">Similar to ReadRawValue, but returns only a first raw value for port 2. Has a high data return rate.</P>
+<H4 class="returns">Returns</H4>
+<P class="returnssummary">First element of a raw sensor reading</P>
+<H3 class="operation">Sensor2.Raw3 (var1, var2, var3)</H3>
+<P class="operationsummary">Gets three raw values for port 2</P>
+<H4 class="parameter">var1</H4>
+<P class="parametersummary">The variable in which the first value will be written.</P>
+<H4 class="parameter">var2</H4>
+<P class="parametersummary">The variable in which the second value will be written.</P>
+<H4 class="parameter">var3</H4>
+<P class="parametersummary">The variable in which the third value will be written.</P>
+<H2 class="object">Sensor3</H2>
+<P class="objectsummary">Access sensors that are attached to the brick.<BR>To specify the sensor use the port number which is printed below the socket on the brick (for example 1).<BR>To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).</P>
+<H3 class="operation">Sensor3.Raw1 ()</H3>
+<P class="operationsummary">Similar to ReadRawValue, but returns only a first raw value for port 3. Has a high data return rate.</P>
+<H4 class="returns">Returns</H4>
+<P class="returnssummary">First element of a raw sensor reading</P>
+<H3 class="operation">Sensor3.Raw3 (var1, var2, var3)</H3>
+<P class="operationsummary">Gets three raw values for port 3</P>
+<H4 class="parameter">var1</H4>
+<P class="parametersummary">The variable in which the first value will be written.</P>
+<H4 class="parameter">var2</H4>
+<P class="parametersummary">The variable in which the second value will be written.</P>
+<H4 class="parameter">var3</H4>
+<P class="parametersummary">The variable in which the third value will be written.</P>
+<H2 class="object">Sensor4</H2>
+<P class="objectsummary">Access sensors that are attached to the brick.<BR>To specify the sensor use the port number which is printed below the socket on the brick (for example 1).<BR>To access sensors of further bricks that are connected via daisy-chaining, use the next higher numbers instead (5 - 8 will access the sensors on the first daisy-chained brick, 9-12 the sensors on the next one and so on).</P>
+<H3 class="operation">Sensor4.Raw1 ()</H3>
+<P class="operationsummary">Similar to ReadRawValue, but returns only a first raw value for port 4. Has a high data return rate.</P>
+<H4 class="returns">Returns</H4>
+<P class="returnssummary">First element of a raw sensor reading</P>
+<H3 class="operation">Sensor4.Raw3 (var1, var2, var3)</H3>
+<P class="operationsummary">Gets three raw values for port 4</P>
+<H4 class="parameter">var1</H4>
+<P class="parametersummary">The variable in which the first value will be written.</P>
+<H4 class="parameter">var2</H4>
+<P class="parametersummary">The variable in which the second value will be written.</P>
+<H4 class="parameter">var3</H4>
+<P class="parametersummary">The variable in which the third value will be written.</P>
 <H2 class="object">Speaker</H2>
 <P class="objectsummary">Use the brick's built-in speaker to play tones or sound files.</P>
 <H3 class="operation">Speaker.IsBusy ()</H3>
@@ -1801,10 +1839,6 @@ When developing programs that only need to run on the PC, you can also use every
 <P class="operationsummary">The time in milliseconds. Timer number 1</P>
 <H4 class="returns">Returns</H4>
 <P class="returnssummary">Milliseconds</P>
-<H3 class="operation">Time.Get10 ()</H3>
-<P class="operationsummary">The time in milliseconds. Timer number 10</P>
-<H4 class="returns">Returns</H4>
-<P class="returnssummary">Milliseconds</P>
 <H3 class="operation">Time.Get2 ()</H3>
 <P class="operationsummary">The time in milliseconds. Timer number 2</P>
 <H4 class="returns">Returns</H4>
@@ -1839,8 +1873,6 @@ When developing programs that only need to run on the PC, you can also use every
 <P class="returnssummary">Milliseconds</P>
 <H3 class="operation">Time.Reset1 ()</H3>
 <P class="operationsummary">Reset timer number 1 to 0</P>
-<H3 class="operation">Time.Reset10 ()</H3>
-<P class="operationsummary">Reset timer number 10 to 0</P>
 <H3 class="operation">Time.Reset2 ()</H3>
 <P class="operationsummary">Reset timer number 2 to 0</P>
 <H3 class="operation">Time.Reset3 ()</H3>

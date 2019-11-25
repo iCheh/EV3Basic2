@@ -33,6 +33,7 @@ using EV3Communication;
 using LMSAssembler;
 using EV3BasicCompiler;
 using System.Diagnostics;
+using EV3BasicPreprocessor;
 
 namespace EV3Explorer
 {
@@ -558,40 +559,24 @@ namespace EV3Explorer
                     try
                     {
                         // Вставка препроцессора
-                        /*
-                        var processEV3 = Process.GetCurrentProcess();
-                        string fullPath = processEV3.MainModule.FileName;
-                        string LmsInterpreterPath = fullPath.Replace("EV3Explorer.exe", "LMS Interpreter.exe");
+                        Preprocessor preprocessor = new Preprocessor();
+                        var args = new string[] { pcfile.FullName };
+                        var text = preprocessor.Start(args);
+                        var stream = new MemoryStream();
+                        preprocessor.WriteToStream(text, stream);
+                        preprocessor.WriteToFile(text); // ??? Надо крепко подумать, нужен ли этот файл ???
+                        stream.Position = 0;
+                        //===========
 
-                        ProcessStartInfo processLMS = new ProcessStartInfo();
-                        processLMS.Arguments = pcfile.DirectoryName + @"\" + pcfile.Name;
-                        processLMS.FileName = LmsInterpreterPath;
-                        Process.Start(processLMS);
-
-                        int i = 0;
-                        do
-                        {
-                            i += 1;
-                            if (i >= 100000)
-                            {
-                                break;
-                            }
-                        } while (!Process.GetProcessesByName("LMS Interpreter").First().HasExited);
-
-                        string newFullName = pcfile.DirectoryName + @"\out_" + pcfile.Name;
-                        RefreshPCList(true);
-
-                        // =====================
-                        FileStream fs = new FileStream(newFullName, FileMode.Open, FileAccess.Read);
-                        */
-
-                        FileStream fs = new FileStream(pcfile.FullName, FileMode.Open, FileAccess.Read);
+                        //FileStream fs = new FileStream(pcfile.FullName, FileMode.Open, FileAccess.Read);
 
                         MemoryStream ms1 = new MemoryStream();
                         MemoryStream ms = new MemoryStream();
 
-                        compiler.Compile(fs, ms1, errors);
-                        fs.Close();
+                        //compiler.Compile(fs, ms1, errors);
+                        //fs.Close();
+
+                        compiler.Compile(stream, ms1, errors);
 
                         ms1.Position = 0;
                         assembler.Assemble(ms1, ms, errors);

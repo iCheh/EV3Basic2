@@ -1,0 +1,23 @@
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\LMS Interpreter\bin\Debug\EV3BasicPreprocessor.exe.config
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\LMS Interpreter\bin\Debug\EV3BasicPreprocessor.exe
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\LMS Interpreter\bin\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\LMS Interpreter\obj\Debug\EV3BasicPreprocessor.exe
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\LMS Interpreter\obj\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\EV3BasicPrepocessor\bin\Debug\EV3BasicPreprocessor.exe.config
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\EV3BasicPrepocessor\bin\Debug\EV3BasicPreprocessor.exe
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\EV3BasicPrepocessor\bin\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\EV3BasicPrepocessor\obj\Debug\EV3BasicPreprocessor.csprojAssemblyReference.cache
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\EV3BasicPrepocessor\obj\Debug\EV3BasicPreprocessor.exe
+C:\Users\Дом\source\repos\EV3BasicPrepocessor\EV3BasicPrepocessor\obj\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\source\repos\EV3BasicPreprocessor\EV3BasicPreprocessor\bin\Debug\EV3BasicPreprocessor.exe.config
+C:\Users\Дом\source\repos\EV3BasicPreprocessor\EV3BasicPreprocessor\bin\Debug\EV3BasicPreprocessor.exe
+C:\Users\Дом\source\repos\EV3BasicPreprocessor\EV3BasicPreprocessor\bin\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\source\repos\EV3BasicPreprocessor\EV3BasicPreprocessor\obj\Debug\EV3BasicPreprocessor.exe
+C:\Users\Дом\source\repos\EV3BasicPreprocessor\EV3BasicPreprocessor\obj\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\source\repos\EV3BasicPreprocessor\EV3BasicPreprocessor\obj\Debug\EV3BasicPreprocessor.csprojAssemblyReference.cache
+C:\Users\Дом\Desktop\EV3Basic2\EV3BasicPreprocessor\bin\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\Desktop\EV3Basic2\EV3BasicPreprocessor\obj\Debug\EV3BasicPreprocessor.pdb
+C:\Users\Дом\Desktop\EV3Basic2\EV3BasicPreprocessor\bin\Debug\EV3BasicPreprocessor.dll.config
+C:\Users\Дом\Desktop\EV3Basic2\EV3BasicPreprocessor\bin\Debug\EV3BasicPreprocessor.dll
+C:\Users\Дом\Desktop\EV3Basic2\EV3BasicPreprocessor\obj\Debug\EV3BasicPreprocessor.dll
+C:\Users\Дом\Desktop\EV3Basic2\EV3BasicPreprocessor\obj\Debug\EV3BasicPreprocessor.csprojAssemblyReference.cache

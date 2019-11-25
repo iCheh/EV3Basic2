@@ -16,6 +16,7 @@ inline MOTORAB.SETSPEED    // FV
 {
 	MOVEF_8 :0 setSpeedA
 	OUTPUT_SPEED 0 3 setSpeedA
+}
 
 inline MOTORAB.SETPOWER   // FV
 {
