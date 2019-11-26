@@ -13,13 +13,13 @@ init
 
 inline SENSOR4.RAW1    // F
 {
-	INPUT_READEXT 0 0 0 -1 18 1 s4out1
+	INPUT_READEXT 0 3 0 -1 18 1 s4out1
 	MOVE32_F s4out1 :0
 }
 
 inline SENSOR4.RAW3    // FFFV
 {
-	INPUT_READEXT 0 0 0 -1 18 3 s4out1 s4out2 s4out3
+	INPUT_READEXT 0 3 0 -1 18 3 s4out1 s4out2 s4out3
 	MOVE32_F s4out1 :0
 	MOVE32_F s4out2 :1
 	MOVE32_F s4out3 :2
